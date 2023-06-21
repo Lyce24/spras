@@ -3,16 +3,17 @@ Utility functions for pathway reconstruction
 """
 
 import base64
-import docker
-import itertools as it
 import hashlib
+import itertools as it
 import json
-import re
 import os
 import platform
-import numpy as np  # Required to eval some forms of parameter ranges
-from typing import Dict, Any, Optional, Union, Tuple, List
+import re
 from pathlib import Path, PurePath, PurePosixPath
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+import docker
+import numpy as np  # Required to eval some forms of parameter ranges
 import pandas as pd
 import networkx as nx
 
@@ -151,17 +152,20 @@ def run_container_docker(container: str, command: List[str], volumes: List[Tuple
                                     volumes=bind_paths,
                                     working_dir=working_dir,
                                     environment=[environment]).decode('utf-8')
-            
+
         # Raised on non-Unix systems
         except AttributeError:
             pass
-        return out
+
+        # TODO: Not sure whether this is needed or where to close the client
+        client.close()
+
     except Exception as err:
         print(err)
-    finally:
-        # Not sure whether this is needed
-        client.close()
-        return out
+    # Removed the finally block to address bugbear B012
+    # "`return` inside `finally` blocks cause exceptions to be silenced"
+    # finally:
+    return out
 
 
 def run_container_singularity(container: str, command: List[str], volumes: List[Tuple[PurePath, PurePath]], working_dir: str, environment: str = 'SPRAS=True'):
@@ -291,7 +295,7 @@ def process_config(config):
     # Override the default parameter hash length if specified in the config file
     try:
         hash_length = int(config["hash_length"])
-    except (ValueError, KeyError) as e:
+    except (ValueError, KeyError):
         hash_length = DEFAULT_HASH_LENGTH
     prior_params_hashes = set()
 
@@ -381,13 +385,14 @@ def add_rank_column(df: pd.DataFrame) -> pd.DataFrame:
     """
     df['rank'] = 1
     return df
+<<<<<<< HEAD
 
 def construct_graph(df : pd.DataFrame, directed : bool = False):
     G = nx.DiGraph() if directed else nx.Graph()
     # extract edges from df
     edges = df[['source', 'target']].values.tolist()
-    
-    
+
+
 
 def pathway_visualization():
     pass
@@ -403,3 +408,5 @@ b   d   2
 '''
 df = pd.DataFrame({'source': ['a', 'c', 'a', 'b'], 'target': ['b', 'd', 'c', 'd'], 'weight': [1, 1, 2, 2]})
 print(df)
+=======
+>>>>>>> RWR_and_TieDIE
