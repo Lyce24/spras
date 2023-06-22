@@ -13,9 +13,9 @@ from pathlib import Path, PurePath, PurePosixPath
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 import docker
+import networkx as nx
 import numpy as np  # Required to eval some forms of parameter ranges
 import pandas as pd
-import networkx as nx
 
 # The default length of the truncated hash used to identify parameter combinations
 DEFAULT_HASH_LENGTH = 7
@@ -385,28 +385,3 @@ def add_rank_column(df: pd.DataFrame) -> pd.DataFrame:
     """
     df['rank'] = 1
     return df
-<<<<<<< HEAD
-
-def construct_graph(df : pd.DataFrame, directed : bool = False):
-    G = nx.DiGraph() if directed else nx.Graph()
-    # extract edges from df
-    edges = df[['source', 'target']].values.tolist()
-
-
-
-def pathway_visualization():
-    pass
-
-
-# Simple examples to test the functions
-# construct a df such as
-'''
-a   b   1
-c   d   1
-a   c   2
-b   d   2
-'''
-df = pd.DataFrame({'source': ['a', 'c', 'a', 'b'], 'target': ['b', 'd', 'c', 'd'], 'weight': [1, 1, 2, 2]})
-print(df)
-=======
->>>>>>> RWR_and_TieDIE

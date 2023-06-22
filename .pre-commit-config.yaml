@@ -23,8 +23,4 @@ repos:
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     rev: 'v0.0.269'
     hooks:
-<<<<<<< HEAD
       - id: ruff
-=======
-      - id: ruff
->>>>>>> RWR_and_TieDIE

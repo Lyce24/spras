@@ -1,5 +1,5 @@
-import networkx as nx
 import matplotlib.pyplot as plt
+import networkx as nx
 
 interactome = 'interactome-flybase-collapsed-weighted.txt'
 flybase_interactome = 'flybase_interactome.txt'
