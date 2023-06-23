@@ -7,15 +7,6 @@ singularity: false
 
 algorithms:
   -
-    name: pathlinker
-    params:
-      directed: true
-      include: true
-      run1:
-        k:
-          - 10
-          - 20
-  -
     name: omicsintegrator1
     params:
       directed: false
@@ -39,7 +30,7 @@ algorithms:
     name: omicsintegrator2
     params:
       directed: false
-      include: false
+      include: true
       run1:
         b:
           - 4
@@ -50,26 +41,15 @@ algorithms:
           - 2
         g:
           - 3
-  -
-    name: meo
-    params:
-      directed: true
-      include: false
-      run1:
-        local_search:
-          - "Yes"
-        max_path_length:
-          - 3
-        rand_restarts:
-          - 10
+
 datasets:
   -
     data_dir: input
     edge_files:
-      - phosphosite-irefindex13.0-uniprot.txt
-    label: tps-egfr
+      - flybase_interactome.txt
+    label: flybase
     node_files:
-      - tps-egfr-prizes.txt
+      - source_gene.txt
     other_files: []
 reconstruction_settings:
   locations:
@@ -79,4 +59,6 @@ analysis:
   graphspace:
     include: false
   summary:
-    include: true
+    include: false
+  ml:
+    include: false

@@ -1,17 +1,26 @@
+import dash_cytoscape as cyto
 import matplotlib.pyplot as plt
 import networkx as nx
+from dash import Dash, html
+
+app = Dash(__name__)
 
 interactome = 'interactome-flybase-collapsed-weighted.txt'
 flybase_interactome = 'flybase_interactome.txt'
-source_gene = 'source_gene.txt'
+source_gene_file = 'source_gene.txt'
 flybase_dict = 'flybase_dict.txt'
 myoblast_fusion_components = 'myoblast_fusion_components.txt'
 gene_dict = {}
+selected_edges_file = 'selected_edges.txt'
 
+index = 0
 with open(interactome, 'r') as f:
     with open(flybase_interactome, 'w') as f2:
         with open(flybase_dict, 'w') as f3:
             for line in f:
+                if index == 0:
+                    index += 1
+                    continue
                 # split the line by tabs
                 temp = line.strip().split('\t')
                 f2.write(temp[0] + '\t' + temp[1] + '\t' + temp[2] + '\n')
@@ -25,10 +34,23 @@ with open(interactome, 'r') as f:
 source_gene = set()
 
 with open(myoblast_fusion_components, 'r') as f:
+    with open(source_gene_file, 'w') as f2:
+        f2.write('NODEID\tprize\tsources\ttargets\n')
+        for line in f:
+            # split the line by tabs
+            temp = line.strip().split('\t')
+            source_gene.add(gene_dict[temp[1]])
+            f2.write(gene_dict[temp[1]] + '\t' + '1' + '\t' + 'True' + '\t' + '\n')
+
+with open(flybase_interactome, 'r') as f:
     for line in f:
-        # split the line by tabs
         temp = line.strip().split('\t')
-        source_gene.add(gene_dict[temp[1]])
+        if len(temp) != 3:
+            print(f"Error on number of columns: {temp}")
+        if " " in temp[0] or " " in temp[1]:
+            print(f"Spaces in protein name: {temp[0]} or {temp[1]}")
+
+print('Complete checks.')
 
 nodes = set()
 edges = []
@@ -69,6 +91,10 @@ for edge in edges:
     if edge[0] in linker_nodes and edge[1] in linker_nodes:
         selected_edges.append(edge)
 
+with open(selected_edges_file, 'w') as f:
+    for i in selected_edges:
+        f.write(i[0] + '\t' + i[1] + '\t' + i[2]['weight'] + '\n')
+
 print(len(linker_nodes))
 print(len(selected_edges))
 
@@ -104,3 +130,51 @@ nx.draw_networkx_labels(P, pos, labels, font_size=8, font_color="black")
 plt.tight_layout()
 plt.axis("off")
 plt.savefig("myoblast_fusion_components.png") # save as png
+
+
+
+elements = nx.cytoscape_data(P)
+for i in range(len(elements['elements']['nodes'])):
+    elements['elements']['nodes'][i]['data']['label'] = elements['elements']['nodes'][i]['data']['id']
+    if elements['elements']['nodes'][i]['data']['id'] in source_gene:
+        elements['elements']['nodes'][i]['classes'] = 'red'
+        elements['elements']['nodes'][i]['position'] = {'x': 400, 'y': 40 * i}
+    else:
+        elements['elements']['nodes'][i]['position'] = {'x': 3000, 'y': 40 * i}
+
+
+app.layout = html.Div([
+    cyto.Cytoscape(
+        id='cytoscape-styling-1',
+        layout={'name': 'preset'},
+        style={'width': '100%', 'height': '960px'},
+        elements=elements['elements'],
+        stylesheet=[
+            # Group selectors
+            {
+                'selector': 'node',
+                'style': {
+                    'content': 'data(label)'
+                }
+            },
+
+            # Class selectors
+            {
+                'selector': '.red',
+                'style': {
+                    'background-color': 'red',
+                    'line-color': 'red'
+                }
+            },
+            {
+                'selector': '.triangle',
+                'style': {
+                    'shape': 'triangle'
+                }
+            }
+        ]
+    )
+])
+
+if __name__ == '__main__':
+    app.run_server(debug=True)

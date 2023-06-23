@@ -1,5 +1,3 @@
-FlyBase1	#symbol1
-FlyBase2	symbol2
 FBgn0010339	128up
 FBgn0004907	14-3-3zeta
 FBgn0027493	AdSS
