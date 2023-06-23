@@ -128,7 +128,6 @@ jobs:
         tags: latest
         cache_froms: reedcompbio/mincostflow:latest
         push: false
-<<<<<<< HEAD
     - name: Build RWR Docker image
       uses: docker/build-push-action@v1
       with:
@@ -147,8 +146,6 @@ jobs:
         tags: latest
         cache_froms: erikliu24/tiedie:latest
         push: false
-=======
->>>>>>> master
 
   # Run pre-commit checks on source files
   pre-commit:

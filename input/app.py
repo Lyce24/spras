@@ -1,7 +1,6 @@
-from dash import Dash, html
 import dash_cytoscape as cyto
 import networkx as nx
-
+from dash import Dash, html
 
 app = Dash(__name__)
 
@@ -14,7 +13,7 @@ elements = nx.cytoscape_data(G)
 for i in range(len(elements['elements']['nodes'])):
     elements['elements']['nodes'][i]['data']['label'] = elements['elements']['nodes'][i]['data']['id']
     elements['elements']['nodes'][i]['position'] = {'x': 40 * i, 'y': 40 * i}
-    
+
 # nodes = [
 #     {
 #         'data': {'id': short, 'label': label},

@@ -23,34 +23,30 @@ with open(interactome, 'r') as f:
                     continue
                 # split the line by tabs
                 temp = line.strip().split('\t')
-                f2.write(temp[0] + '\t' + temp[1] + '\t' + temp[2] + '\n')
+                if temp[0] == 'nan':
+                    print(temp)
+                    temp[0] = 'TRPV'
+                if temp[1] == 'nan':
+                    print(temp)
+                    temp[1] = 'TRPV'
                 if temp[4] not in gene_dict:
                     gene_dict[temp[4]] = temp[0]
                     f3.write(temp[4] + '\t' + temp[0] + '\n')
                 if temp[5] not in gene_dict:
                     gene_dict[temp[5]] = temp[1]
                     f3.write(temp[5] + '\t' + temp[1] + '\n')
+                f2.write(temp[0] + '\t' + temp[1] + '\t' + temp[2] + '\n')
 
 source_gene = set()
 
 with open(myoblast_fusion_components, 'r') as f:
     with open(source_gene_file, 'w') as f2:
-        f2.write('NODEID\tprize\tsources\ttargets\n')
+        f2.write('NODEID\tprize\n')
         for line in f:
             # split the line by tabs
             temp = line.strip().split('\t')
             source_gene.add(gene_dict[temp[1]])
-            f2.write(gene_dict[temp[1]] + '\t' + '1' + '\t' + 'True' + '\t' + '\n')
-
-with open(flybase_interactome, 'r') as f:
-    for line in f:
-        temp = line.strip().split('\t')
-        if len(temp) != 3:
-            print(f"Error on number of columns: {temp}")
-        if " " in temp[0] or " " in temp[1]:
-            print(f"Spaces in protein name: {temp[0]} or {temp[1]}")
-
-print('Complete checks.')
+            f2.write(gene_dict[temp[1]] + '\t' + '1' + '\n')
 
 nodes = set()
 edges = []
@@ -101,18 +97,6 @@ print(len(selected_edges))
 P = nx.Graph()
 P.add_nodes_from(linker_nodes)
 P.add_edges_from(selected_edges)
-
-
-# layers = {}
-# for node in source_gene:
-#     layers[node] = 1
-# for node in linker_nodes - source_gene:
-#     layers[node] = 2
-
-# print(len(layers))
-
-# for key in layers:
-#         nx.set_node_attributes(P, {key: layers[key]}, 'layers')
 
 pos = nx.spring_layout(P)
 options = {"edgecolors": "tab:gray", "node_size": 300, "alpha": 0.9}
