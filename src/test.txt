@@ -1,7 +1,0 @@
-I	K	1
-K	G	1
-C	G	1
-D	G	1
-G	I	1
-G	L	1
-G	M	1

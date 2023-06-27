@@ -1,0 +1,92 @@
+protein1	protein2	in_solution	cost
+Pak	Arpc1		1.1252303
+Pak	Rac1	True	0.5576127
+Pak	Rac2		0.6974895999999999
+Pak	dock	True	0.567334
+Pak	drk		1.0952826
+Pak	mbc		1.1252303
+Arp3	Arpc1	True	0.7657423000000001
+Arp3	WASp		1.140227
+Arp3	drk	True	0.9785927
+WASp	Arpc1		1.1071073
+WASp	Crk		0.8326261999999999
+WASp	Hem		1.060865
+WASp	Rac1	True	0.6860725999999999
+WASp	Rac2		1.0952826
+WASp	SCAR	True	0.7011461999999999
+WASp	Vrp1		0.7966754
+WASp	Whamy		1.060865
+WASp	dock		0.7201811
+WASp	drk		1.0714511
+sns	Crk		0.9348131
+sns	dock		0.7214822
+sns	hbs		0.653712
+sns	kirre		0.6613919
+sns	rst	True	0.5764158
+Rab11	Arf79F	True	0.8486806
+Rab11	Rac2		1.1717938
+Arpc1	wbl	True	1.1717938
+Rac2	Arf79F		1.1717938
+Rac2	Ced-12		1.1252303
+Rac2	Hem		1.0952826
+Rac2	Pak3		0.9348131
+Rac2	Rac1	True	0.599155
+Rac2	SCAR		1.1252303
+Rac2	dia	True	1.1252303
+Rac2	dock		1.1252303
+Rac2	mbc		1.0727806
+drk	Ced-12		1.1252303
+drk	Crk	True	0.6936151999999999
+drk	Hem		1.1252303
+drk	Rok		0.9785927
+drk	SCAR		1.1252303
+drk	beta-Spec		1.1252303
+drk	dock	True	0.7172736
+drk	kirre		1.1252303
+drk	mbc		1.0750392
+drk	rst		1.1252303
+Whamy	Rac1	True	1.060865
+alpha-Spec	Crk		1.1717938
+alpha-Spec	Rac1		1.1717938
+alpha-Spec	beta-Spec	True	0.5371136999999999
+alpha-Spec	rols	True	1.1252303
+blow	Crk	True	0.8278468000000001
+blow	Vrp1		0.9348131
+blow	rols		0.9670238999999999
+Arf79F	Hem	True	0.9348131
+Crk	Ced-12		1.1476479
+Crk	SCAR		1.1252303
+Crk	Vrp1		0.9348131
+Crk	dock		1.0952826
+Crk	mbc	True	0.5652607
+siz	Arf51F	True	0.8557636999999999
+siz	dock		1.1717938
+SCAR	Hem	True	0.7063527
+SCAR	Rac1		1.1252303
+SCAR	dock		0.7358376
+SCAR	mbc		1.1252303
+Ced-12	Rac1		1.1252303
+Ced-12	mbc	True	0.7125587
+Rok	Rac1	True	0.7949651
+Rok	Rho1	True	0.5655272
+Rac1	Hem		1.0952826
+Rac1	Pak3	True	0.6315214
+Rac1	dia		1.1252303
+Rac1	dock		1.1252303
+Rac1	mbc		0.8945827
+pip	wbl	True	0.6412891
+Arf51F	sls	True	1.1717938
+sqh	Rho1	True	0.9484353000000001
+rst	dock		0.8266118
+rst	hbs	True	0.6464098
+rst	kirre		0.9310917
+kirre	dock		0.7660425000000001
+kirre	hbs	True	0.6457133
+kirre	rols	True	0.6620813
+dock	Hem		1.0952826
+dock	Vrp1	True	0.7738670999999999
+dock	hbs		0.7214822
+dock	mbc		1.0952826
+sls	rols	True	1.0546616000000002
+rols	mbc	True	0.6693754
+Rho1	dia		1.1252303

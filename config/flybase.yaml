@@ -53,7 +53,7 @@ datasets:
     other_files: []
 reconstruction_settings:
   locations:
-    reconstruction_dir: output/flybase
+    reconstruction_dir: FlyBase
   run: true
 analysis:
   graphspace:
