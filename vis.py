@@ -2,6 +2,7 @@ import dash_cytoscape as cyto
 import networkx as nx
 from dash import Dash, html, dcc, Input, Output, callback
 from pathlib import Path
+
 app = Dash(__name__)
 
 source_gene_file = Path('./input/source_gene.txt')
@@ -26,17 +27,23 @@ algo_list = ['rwr mode1', 'rwr mode2', 'rwr mode3']
 
 # find all runs of oi1 in the parent directory of rwr_pathway_file
 parent_dir = rwr_pathway_file.parent
+
 oi1_runs = [x for x in parent_dir.iterdir() if x.is_dir() and x.name.startswith('flybase-omicsintegrator1-params')]
 oi2_runs = [x for x in parent_dir.iterdir() if x.is_dir() and x.name.startswith('flybase-omicsintegrator2-params')]
 
+oi1_dict = {}
+oi2_dict = {}
+
+for i, run in enumerate(oi1_runs):
+    temp = str(run).split('-')
+    oi1_dict[temp[-1]] = i
+    algo_list.append(f'oi1 {temp[-1]}')
 
 
-for i in range(0, len(oi1_runs)):
-    algo_list.append(f'oi1 run{i+1}')
-
-
-for i in range(0, len(oi2_runs)):
-    algo_list.append(f'oi2 run{i+1}')
+for i, run in enumerate(oi2_runs):
+    temp = str(run).split('-')
+    oi2_dict[temp[-1]] = i
+    algo_list.append(f'oi2 {temp[-1]}')
 
 def produce_elements(algo, mode):
     if algo == 'rwr':
@@ -69,7 +76,7 @@ def produce_elements(algo, mode):
         print(f"Number of nodes: {len(G.nodes)}")
         print(f"Number of edges: {len(G.edges)} \n")
     elif algo == 'oi1':
-        run = int(mode[-1]) - 1
+        run = oi1_dict[mode]
         file = oi1_runs[run] / 'pathway.txt'
         edges = []
         with open(file, 'r') as f:
@@ -83,7 +90,7 @@ def produce_elements(algo, mode):
         print(f"Number of edges: {len(G.edges)} \n")
     
     elif algo == 'oi2':
-        run = int(mode[-1]) - 1
+        run = oi2_dict[mode]
         file = oi2_runs[run] / 'pathway.txt'
         edges = []
         with open(file, 'r') as f:

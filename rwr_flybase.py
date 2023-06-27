@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 flybase_interactome = Path('./input/flybase_interactome.txt')
 source_gene_file = Path('./input/source_gene.txt')
 output_file = Path('./FlyBase/rwr-pathway.txt')
+output_file.parent.mkdir(parents=True, exist_ok=True)
 
 source_gene = set()
 
