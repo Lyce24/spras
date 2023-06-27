@@ -5,9 +5,17 @@ from pathlib import Path
 
 app = Dash(__name__)
 
-source_gene_file = Path('./input/source_gene.txt')
-rwr_pathway_file = Path('./FlyBase/rwr-pathway.txt')
 
+algo_list = []
+
+source_gene_file = Path('./input/source_gene.txt')
+## Check whether the directory FlyBase exists
+
+if Path('./FlyBase/rwr-pathway.txt').exists():
+    rwr_pathway_file = Path('./FlyBase/rwr-pathway.txt')
+    algo_list.append('rwr mode1')
+    algo_list.append('rwr mode2')
+    algo_list.append('rwr mode3')
 
 source_gene = set()
 with open(source_gene_file, 'r') as f:
@@ -22,11 +30,8 @@ with open(source_gene_file, 'r') as f:
         source_gene.add(endpoints[0])
         
         
-algo_list = ['rwr mode1', 'rwr mode2', 'rwr mode3']
-
-
 # find all runs of oi1 in the parent directory of rwr_pathway_file
-parent_dir = rwr_pathway_file.parent
+parent_dir = Path("./FlyBase")
 
 oi1_runs = [x for x in parent_dir.iterdir() if x.is_dir() and x.name.startswith('flybase-omicsintegrator1-params')]
 oi2_runs = [x for x in parent_dir.iterdir() if x.is_dir() and x.name.startswith('flybase-omicsintegrator2-params')]
@@ -140,7 +145,7 @@ app.layout = html.Div([
     
     dcc.Dropdown(
         id = 'dropdown-update-algo',
-        value = 'rwr mode1',
+        value = f'oi1 {str(oi1_runs[0]).split("-")[-1]}',
         clearable = False,
         options = [
             {'label': name, 'value': name}
@@ -152,7 +157,7 @@ app.layout = html.Div([
         id='flybase_rwr',
         layout={'name': 'preset'},
         style={'width': '100%', 'height': '960px'},
-        elements=produce_elements('rwr', 'mode1'),
+        elements=produce_elements('oi1', str(oi1_runs[0]).split('-')[-1]),
         stylesheet=[
             # Group selectors
             {

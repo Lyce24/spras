@@ -1,7 +1,0 @@
-Crk	mbc	1
-Pak	Rac1	1
-Pak	dock	1
-Rac1	Rac2	1
-Rho1	Rok	1
-alpha-Spec	beta-Spec	1
-rst	sns	1

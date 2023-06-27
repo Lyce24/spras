@@ -1,7 +1,0 @@
-Crk	pp	mbc
-Pak	pp	Rac1
-Pak	pp	dock
-Rac1	pp	Rac2
-Rho1	pp	Rok
-alpha-Spec	pp	beta-Spec
-rst	pp	sns
