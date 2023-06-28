@@ -39,10 +39,55 @@ oi2_runs = [x for x in parent_dir.iterdir() if x.is_dir() and x.name.startswith(
 oi1_dict = {}
 oi2_dict = {}
 
+possible_params_oi1 = {}
+possible_params_oi1['b'] = {}
+possible_params_oi1['w'] = {}
+possible_params_oi1['mu'] = {}
+
+valid_runs = []
+
+with open(parent_dir/ 'flybase-pathway-summary.txt', 'r') as f:
+    for i, line in enumerate(f):
+        if i == 0:
+            continue
+        line = line.strip()
+        temp = line.split("\t")
+        if int(temp[-1]) == 34:
+            valid_runs.append(temp[0].split('/')[1].split('-')[-1])
+    
 for i, run in enumerate(oi1_runs):
-    temp = str(run).split('-')
-    oi1_dict[temp[-1]] = i
-    algo_list.append(f'oi1 {temp[-1]}')
+    with open(run / 'pathway.txt', 'r') as f:
+        #check if the lines of the file is between 50 - 100
+        temp = str(run).split('-')
+        if temp[-1] in valid_runs:
+            with open(parent_dir/ 'logs' / f'parameters-omicsintegrator1-params-{temp[-1]}.yaml', 'r') as f:
+                for j, line in enumerate(f):
+                    if j == 0:
+                        line = line.strip()
+                        params = line.split(" ")
+                        if params[-1] in possible_params_oi1['b']:
+                            possible_params_oi1['b'][params[-1]] += 1
+                        else:
+                            possible_params_oi1['b'][params[-1]] = 1
+                    
+                    elif j == 3:
+                        line = line.strip()
+                        params = line.split(" ")
+                        if params[-1] in possible_params_oi1['mu']:
+                            possible_params_oi1['mu'][params[-1]] += 1
+                        else:
+                            possible_params_oi1['mu'][params[-1]] = 1
+                    elif j == 5:
+                        line = line.strip()
+                        params = line.split(" ")
+                        if params[-1] in possible_params_oi1['w']:
+                            possible_params_oi1['w'][params[-1]] += 1
+                        else:
+                            possible_params_oi1['w'][params[-1]] = 1
+                    else:
+                        continue
+            oi1_dict[temp[-1]] = i
+            algo_list.append(f'oi1 {temp[-1]}')
 
 
 for i, run in enumerate(oi2_runs):
@@ -90,7 +135,7 @@ def produce_elements(algo, mode):
                 edges.append((temp[0], temp[1]))
         G = nx.Graph()
         G.add_edges_from(edges)
-        print(f"Using OI1 algorithm with run {run+1}...")
+        print(f"Using OI1 algorithm with run {mode}...")
         print(f"Number of nodes: {len(G.nodes)}")
         print(f"Number of edges: {len(G.edges)} \n")
     
@@ -104,7 +149,7 @@ def produce_elements(algo, mode):
                 edges.append((temp[0], temp[1]))
         G = nx.Graph()
         G.add_edges_from(edges)
-        print(f"Using OI2 algorithm with run {run+1}...")
+        print(f"Using OI2 algorithm with run {mode}...")
         print(f"Number of nodes: {len(G.nodes)}")
         print(f"Number of edges: {len(G.edges)} \n")
 
@@ -135,7 +180,7 @@ def produce_elements(algo, mode):
 app.layout = html.Div([
     dcc.Dropdown(
         id='dropdown-update-layout',
-        value='preset',
+        value='cose',
         clearable=False,
         options=[
             {'label': name.capitalize(), 'value': name}
@@ -155,7 +200,7 @@ app.layout = html.Div([
     
     cyto.Cytoscape(
         id='flybase_rwr',
-        layout={'name': 'preset'},
+        layout={'name': 'cose'},
         style={'width': '100%', 'height': '960px'},
         elements=produce_elements('oi1', str(oi1_runs[0]).split('-')[-1]),
         stylesheet=[

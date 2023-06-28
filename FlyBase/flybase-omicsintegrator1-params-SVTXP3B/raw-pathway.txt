@@ -1,0 +1,10 @@
+Ced-12	pp	mbc
+Hem	pp	SCAR
+SCAR	pp	mbc
+Vrp1	pp	blow
+blow	pp	rols
+hbs	pp	kirre
+hbs	pp	rst
+kirre	pp	rols
+mbc	pp	rols
+rols	pp	sls
