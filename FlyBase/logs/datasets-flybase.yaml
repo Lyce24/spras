@@ -1,0 +1,7 @@
+data_dir: input
+edge_files:
+- flybase_interactome.txt
+label: flybase
+node_files:
+- source_gene.txt
+other_files: []

@@ -10,7 +10,7 @@ algorithms:
     name: pathlinker
     params:
       directed: true
-      include: true
+      include: false
       run1:
         k:
           - 10
@@ -39,7 +39,7 @@ algorithms:
     name: omicsintegrator2
     params:
       directed: false
-      include: false
+      include: true
       run1:
         b:
           - 4
@@ -79,4 +79,6 @@ analysis:
   graphspace:
     include: false
   summary:
-    include: true
+    include: false
+  ml:
+    include: false

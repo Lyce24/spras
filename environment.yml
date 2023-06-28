@@ -15,6 +15,7 @@ dependencies:
   - scikit-learn=1.1
   - seaborn=0.12
   - spython=0.2
+  - dash_cytoscape=0.2.0
   # Only required for GraphSpace
   - commonmark=0.9
   - docutils=0.18

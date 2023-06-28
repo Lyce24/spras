@@ -1,0 +1,9 @@
+NODEID	prize
+lmd	10
+Six4	10
+Mef2	10
+lbe	10
+Mp20	10
+CalpA	10
+Vav	10
+mib2	10

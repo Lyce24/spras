@@ -1,0 +1,76 @@
+# The length of the hash used to identify a parameter combination
+hash_length: 7
+
+# If true, use Singularity instead of Docker
+# Singularity support is only available on Unix
+singularity: false
+
+algorithms:
+  -
+    name: omicsintegrator1
+    params:
+      directed: false
+      include: true
+      run1:
+        b:
+          - 0.1
+          - 1
+          - 2.4
+          - 5
+          - 8
+          - 10
+        d:
+          - 10
+        g:
+          - 1e-3
+        r:
+          - 0
+        w:
+          - 1
+          - 2
+          - 4
+          - 8
+          - 10
+        mu:
+          - 0.0001
+          - 0.0005
+          - 0.001
+          - 0.005
+          - 0.01
+
+  -
+    name: omicsintegrator2
+    params:
+      directed: false
+      include: true
+      run1:
+        b:
+          - 4
+        g:
+          - 0
+      run2:
+        b:
+          - 2
+        g:
+          - 3
+
+datasets:
+  -
+    data_dir: input
+    edge_files:
+      - flybase_interactome.txt
+    label: flybase
+    node_files:
+      - source_gene.txt
+    other_files: []
+reconstruction_settings:
+  locations:
+    reconstruction_dir: FlyBase
+  run: true
+analysis:
+  graphspace:
+    include: false
+  summary:
+    include: true
+  ml:
+    include: false
