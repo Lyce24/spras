@@ -53,10 +53,19 @@ datasets:
        other_files: []
        # Relative path from the spras directory
        data_dir: "input"
+     -
+       label: muscle-development
+       node_files: ["alternative_source_gene.txt", "muscle_target_gene.txt"]
+       # DataLoader.py can currently only load a single edge file, which is the primary network
+       edge_files: ["flybase_interactome.txt"]
+       # Placeholder
+       other_files: []
+       # Relative path from the spras directory
+       data_dir: "input"
 
 reconstruction_settings:
   locations:
-    reconstruction_dir: output/cell_cell_fusion
+    reconstruction_dir: output/amigo2
   run: true
 analysis:
   graphspace:
