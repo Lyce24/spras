@@ -60,20 +60,18 @@ with open(parent_dir / 'flybase-pathway-summary.txt', 'r') as f:
         if int(temp[-1]) == 34:
             name = temp[0].split('/')[1].split('-')[-1]
             valid_runs.append(name)
-            if int(temp[1]) >= 40:
-                print(name)
-                with open(parent_dir / 'logs' / f'parameters-omicsintegrator1-params-{name}.yaml', 'r') as f1:
-                    params = ''
-                    for j, line1 in enumerate(f1):
-                        if j == 0:
-                            params += f'b: {line1.strip().split(" ")[-1]} '
-                        elif j == 3:
-                            params += f'mu: {line1.strip().split(" ")[-1]} '
-                        elif j == 5:
-                            params += f'w: {line1.strip().split(" ")[-1]} '
-                        else:
-                            continue
-                    print(params)
+            # if int(temp[1]) >= 40:
+            #     with open(parent_dir / 'logs' / f'parameters-omicsintegrator1-params-{name}.yaml', 'r') as f1:
+            #         params = ''
+            #         for j, line1 in enumerate(f1):
+            #             if j == 0:
+            #                 params += f'b: {line1.strip().split(" ")[-1]} '
+            #             elif j == 3:
+            #                 params += f'mu: {line1.strip().split(" ")[-1]} '
+            #             elif j == 5:
+            #                 params += f'w: {line1.strip().split(" ")[-1]} '
+            #             else:
+            #                 continue
 
 for i, run in enumerate(oi1_runs):
     # check if the lines of the file is between 50 - 100
@@ -107,7 +105,6 @@ for i, run in enumerate(oi1_runs):
                     continue
         oi1_dict[temp[-1]] = i
         algo_list.append(f'oi1 {temp[-1]}')
-
 
 print(possible_params_oi1)
 
@@ -157,9 +154,21 @@ def produce_elements(algo, mode):
                 edges.append((temp[0], temp[1]))
         G = nx.Graph()
         G.add_edges_from(edges)
+        params = ''
+        with open(parent_dir / 'logs' / f'parameters-omicsintegrator1-params-{mode}.yaml', 'r') as f1:
+            for j, line1 in enumerate(f1):
+                if j == 0:
+                            params += f'b: {line1.strip().split(" ")[-1]}; '
+                elif j == 3:
+                            params += f'mu: {line1.strip().split(" ")[-1]}; '
+                elif j == 5:
+                            params += f'w: {line1.strip().split(" ")[-1]}.'
+                else:
+                            continue
         print(f"Using OI1 algorithm with run {mode}...")
         print(f"Number of nodes: {len(G.nodes)}")
-        print(f"Number of edges: {len(G.edges)} \n")
+        print(f"Number of edges: {len(G.edges)}")
+        print(f"Parameters: {params}\n")
 
     elif algo == 'oi2':
         run = oi2_dict[mode]
@@ -223,6 +232,9 @@ app.layout = html.Div([
         ]
     ),
 
+    
+    dcc.Markdown(id='cytoscape-selectedNodeData-markdown'),
+
     cyto.Cytoscape(
         id='flybase_rwr',
         layout={'name': 'cose'},
@@ -254,7 +266,6 @@ app.layout = html.Div([
         ]
     ),
 
-    dcc.Markdown(id='cytoscape-selectedNodeData-markdown')
 ])
 
 
