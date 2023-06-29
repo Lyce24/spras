@@ -6,79 +6,55 @@ hash_length: 7
 singularity: false
 
 algorithms:
-  -
-    name: pathlinker
-    params:
-      directed: true
-      include: false
-      run1:
-        k:
-          - 10
-          - 20
-  -
-    name: rwr
-    params:
-      directed: false
-      include: true
-      run1:
-        b:
-          - 0.55
-          - 2
-          - 10
-        d:
-          - 10
-        g:
-          - 1e-3
-        r:
-          - 0.01
-        w:
-          - 0.1
-        mu:
-          - 0.008
-  -
-    name: tiedie
-    params:
-      directed: false
-      include: true
-      run1:
-        b:
-          - 4
-        g:
-          - 0
-      run2:
-        b:
-          - 2
-        g:
-          - 3
-  -
-    name: meo
-    params:
-      directed: true
-      include: false
-      run1:
-        local_search:
-          - "Yes"
-        max_path_length:
-          - 3
-        rand_restarts:
-          - 10
+        - name: "pathlinker"
+          params:
+                include: true
+                directed: false
+                run1:
+                    k:
+                      - 100
+                      - 200
+                      - 500
+                      - 1000
+
+        - name: "rwr"
+          params:
+                include : true
+                directed : false
+                run1:
+                    threshold: 
+                      - 0.0001
+                      - 0.0004
+                      - 0.0005
+                      - 0.0007
+                      - 0.002
+                      - 0.004
+                      - 0.005
+
+        - name: "tiedie"
+          params:
+                include: false
+                directed: false
+
 datasets:
-  -
-    data_dir: input
-    edge_files:
-      - phosphosite-irefindex13.0-uniprot.txt
-    label: tps-egfr
-    node_files:
-      - tps-egfr-prizes.txt
-    other_files: []
+     -
+       label: cell-cell-fusion
+       node_files: ["alternative_source_gene.txt", "cell_target_gene.txt"]
+       # DataLoader.py can currently only load a single edge file, which is the primary network
+       edge_files: ["flybase_interactome.txt"]
+       # Placeholder
+       other_files: []
+       # Relative path from the spras directory
+       data_dir: "input"
+
 reconstruction_settings:
   locations:
-    reconstruction_dir: output/egfr
+    reconstruction_dir: output/cell_cell_fusion
   run: true
 analysis:
   graphspace:
     include: false
   summary:
-    include: false
+    include: true
   ml:
     include: false

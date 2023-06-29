@@ -1,6 +1,7 @@
 from pathlib import Path
-import networkx as nx
+
 import matplotlib.pyplot as plt
+import networkx as nx
 
 flybase_interactome = Path('./input/flybase_interactome.txt')
 source_gene_file = Path('./input/source_gene.txt')
@@ -21,7 +22,7 @@ with open(flybase_interactome, 'r') as edges_f:
         nodes.add(endpoints[0])
         nodes.add(endpoints[1])
         edges.append((endpoints[0], endpoints[1], {'weight' : endpoints[2]}))
-        
+
 with open(source_gene_file, 'r') as f:
     for i, line in enumerate(f):
         # if the first line is the title, skip it
@@ -32,8 +33,8 @@ with open(source_gene_file, 'r') as f:
         if len(endpoints) != 2:
             raise ValueError(f"Edge {line} does not contain 2 nodes separated by ' ' and a weight")
         source_gene.add(endpoints[0])
-    
-    
+
+
 G = nx.Graph()
 G.add_nodes_from(nodes)
 G.add_edges_from(edges)

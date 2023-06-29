@@ -6,7 +6,7 @@ import pandas as pd
 from src.prm import PRM
 from src.util import add_rank_column, prepare_volume, run_container
 
-__all__ = ['RandomWalk']
+__all__ = ['RWR']
 
 class RWR(PRM):
     # we need edges (weighted), source set (with prizes), and target set (with prizes).

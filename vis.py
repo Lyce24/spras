@@ -1,7 +1,8 @@
+from pathlib import Path
+
 import dash_cytoscape as cyto
 import networkx as nx
-from dash import Dash, html, dcc, Input, Output, callback
-from pathlib import Path
+from dash import Dash, Input, Output, callback, dcc, html
 
 app = Dash(__name__)
 
