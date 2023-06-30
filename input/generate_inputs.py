@@ -21,6 +21,36 @@ muscle_valid_genes = set()
 cell_target_gene = set()
 muscle_target_gene = set()
 
+with open(interactome, 'r') as f:
+    with open(flybase_interactome, 'w') as f2:
+        with open(flybase_dict, 'w') as f3:
+            for i, line in enumerate(f):
+                if i == 0:
+                    continue
+                # split the line by tabs
+                temp = line.strip().split('\t')
+                if temp[0] == 'nan':
+                    temp[0] = 'TRPV'
+                if temp[1] == 'nan':
+                    temp[1] = 'TRPV'
+                if temp[4] not in gene_dict:
+                    gene_dict[temp[4]] = temp[0]
+                    f3.write(temp[4] + '\t' + temp[0] + '\n')
+                if temp[5] not in gene_dict:
+                    gene_dict[temp[5]] = temp[1]
+                    f3.write(temp[5] + '\t' + temp[1] + '\n')
+                f2.write(temp[0] + '\t' + temp[1] + '\t' + temp[2] + '\n')
+
+
+with open(myoblast_fusion_components, 'r') as f:
+    with open(source_gene_file, 'w') as f2:
+        f2.write('NODEID\tprize\n')
+        for line in f:
+            # split the line by tabs
+            temp = line.strip().split('\t')
+            f2.write(gene_dict[temp[1]] + '\t' + '10' + '\n')
+
+
 with open(source_gene_file, 'r') as f:
     for i, line in enumerate(f):
         if i == 0:
@@ -28,10 +58,6 @@ with open(source_gene_file, 'r') as f:
         temp = line.strip().split('\t')
         source_gene.add(temp[0])
 
-with open(flybase_dict, 'r') as f:
-    for line in f:
-        temp = line.strip().split('\t')
-        gene_dict[temp[0]] = temp[1]
 
 with open(cell_cell_fusion_file, 'r') as f:
     for line in f:

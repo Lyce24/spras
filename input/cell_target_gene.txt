@@ -1,9 +1,9 @@
 NODEID	targets
-Six4	True
-Vav	True
-Mp20	True
 CalpA	True
-mib2	True
 Mef2	True
-lmd	True
+Six4	True
+mib2	True
+Vav	True
 lbe	True
+lmd	True
+Mp20	True
