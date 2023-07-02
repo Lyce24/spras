@@ -51,7 +51,7 @@ class RWR(PRM):
 
     # Skips parameter validation step
     @staticmethod
-    def run(edges=None, sources=None, targets = None, output_file = None, df : float = 0.85, f : str = 'min' , threshold : float = 0.0001, singularity=False):
+    def run(edges=None, sources=None, targets = None, output_file = None, df : float = 0.85, w: float = 0.00, f : str = 'min' , threshold : float = 0.0001, singularity=False):
         """
         Run RandomWalk with Docker
         @param nodetypes:  input node types with sources and targets (required)
@@ -90,11 +90,12 @@ class RWR(PRM):
 
 
         command = ['python',
-                   '/RandomWalk/random_walk.py',
+                   '/RWR/random_walk.py',
                    '--edges_file', edges_file,
                    '--sources_file', sources_file,
                    '--targets_file', targets_file,
                    '--damping_factor', str(df),
+                   '--w', str(w),
                    '--selection_function', f,
                    '--threshold', str(threshold),
                    '--output_file', mapped_out_prefix]

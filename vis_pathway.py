@@ -123,7 +123,7 @@ def produce_elements(G: nx.Graph, target_gene):
             elements['elements']['edges'][i]['classes'] = 'red'
     if target_gene is not None:
         for i in range(len(elements['elements']['edges'])):
-            if elements['elements']['edges'][i]['data']['source'] in target_gene and elements['elements']['edges'][i]['data']['target'] in cell_target_gene:
+            if elements['elements']['edges'][i]['data']['source'] in target_gene and elements['elements']['edges'][i]['data']['target'] in target_gene:
                 elements['elements']['edges'][i]['classes'] = 'blue'
     return elements['elements']
 

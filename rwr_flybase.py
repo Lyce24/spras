@@ -29,7 +29,7 @@ with open(flybase_interactome, 'r') as edges_f:
         total_edges_weight += float(endpoints[2])
         number_of_edges += 1
         if float(endpoints[2]) > float(edge_threshold):
-            edges.append((endpoints[0], endpoints[1], {'weight' : endpoints[2]}))
+            edges.append((endpoints[0], endpoints[1], endpoints[2]))
     avg_weight = total_edges_weight / number_of_edges
     print(f"Average weight of edges: {avg_weight}")
 
