@@ -1,0 +1,92 @@
+protein1	protein2	in_solution	cost
+hbs	dock	True	0.7214822
+hbs	kirre	True	0.6457133
+hbs	rst	True	0.6464098
+hbs	sns		0.653712
+sns	Crk		0.9348131
+sns	dock		0.7214822
+sns	kirre		0.6613919
+sns	rst	True	0.5764158
+Arf51F	siz	True	0.8557636999999999
+Arf51F	sls	True	1.1717938
+siz	dock		1.1717938
+Hem	Arf79F	True	0.9348131
+Hem	Rac1		1.0952826
+Hem	Rac2		1.0952826
+Hem	SCAR	True	0.7063527
+Hem	WASp		1.060865
+Hem	dock		1.0952826
+Hem	drk		1.1252303
+Arpc1	Arp3	True	0.7657423000000001
+Arpc1	Pak		1.1252303
+Arpc1	WASp		1.1071073
+Arpc1	wbl	True	1.1717938
+sqh	Rho1	True	0.9484353000000001
+Vrp1	Crk		0.9348131
+Vrp1	WASp		0.7966754
+Vrp1	blow		0.9348131
+Vrp1	dock	True	0.7738670999999999
+dock	Crk		1.0952826
+dock	Pak	True	0.567334
+dock	Rac1		1.1252303
+dock	Rac2		1.1252303
+dock	SCAR		0.7358376
+dock	WASp		0.7201811
+dock	drk		0.7172736
+dock	kirre		0.7660425000000001
+dock	mbc		1.0952826
+dock	rst		0.8266118
+rst	drk		1.1252303
+rst	kirre		0.9310917
+Crk	Ced-12		1.1476479
+Crk	SCAR		1.1252303
+Crk	WASp		0.8326261999999999
+Crk	alpha-Spec		1.1717938
+Crk	blow	True	0.8278468000000001
+Crk	drk	True	0.6936151999999999
+Crk	mbc	True	0.5652607
+pip	wbl	True	0.6412891
+Rab11	Arf79F	True	0.8486806
+Rab11	Rac2		1.1717938
+Rho1	Rok	True	0.5655272
+Rho1	dia		1.1252303
+Rok	Rac1	True	0.7949651
+Rok	drk		0.9785927
+Rac2	Arf79F		1.1717938
+Rac2	Ced-12		1.1252303
+Rac2	Pak		0.6974895999999999
+Rac2	Pak3		0.9348131
+Rac2	Rac1	True	0.599155
+Rac2	SCAR		1.1252303
+Rac2	WASp		1.0952826
+Rac2	dia	True	1.1252303
+Rac2	mbc		1.0727806
+Ced-12	Rac1		1.1252303
+Ced-12	drk		1.1252303
+Ced-12	mbc	True	0.7125587
+Whamy	Rac1	True	1.060865
+Whamy	WASp		1.060865
+dia	Rac1		1.1252303
+Arp3	WASp		1.140227
+Arp3	drk	True	0.9785927
+mbc	Pak		1.1252303
+mbc	Rac1		0.8945827
+mbc	SCAR		1.1252303
+mbc	drk		1.0750392
+mbc	rols	True	0.6693754
+rols	alpha-Spec	True	1.1252303
+rols	blow		0.9670238999999999
+rols	kirre	True	0.6620813
+rols	sls	True	1.0546616000000002
+WASp	Rac1	True	0.6860725999999999
+WASp	SCAR	True	0.7011461999999999
+WASp	drk		1.0714511
+Pak	Rac1	True	0.5576127
+Pak	drk		1.0952826
+alpha-Spec	Rac1		1.1717938
+alpha-Spec	beta-Spec	True	0.5371136999999999
+SCAR	Rac1		1.1252303
+SCAR	drk		1.1252303
+Rac1	Pak3	True	0.6315214
+drk	beta-Spec		1.1252303
+drk	kirre		1.1252303

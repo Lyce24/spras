@@ -1,0 +1,92 @@
+protein1	protein2	cost	in_solution
+wbl	Arpc1	1.1717938	True
+wbl	pip	0.6412891	True
+dia	Rac1	1.1252303	
+dia	Rac2	1.1252303	True
+dia	Rho1	1.1252303	
+alpha-Spec	Crk	1.1717938	
+alpha-Spec	Rac1	1.1717938	
+alpha-Spec	beta-Spec	0.5371136999999999	True
+alpha-Spec	rols	1.1252303	True
+hbs	dock	0.7214822	True
+hbs	kirre	0.6457133	True
+hbs	rst	0.6464098	True
+hbs	sns	0.653712	
+Rac1	Ced-12	1.1252303	
+Rac1	Hem	1.0952826	
+Rac1	Pak	0.5576127	True
+Rac1	Pak3	0.6315214	True
+Rac1	Rac2	0.599155	True
+Rac1	Rok	0.7949651	True
+Rac1	SCAR	1.1252303	
+Rac1	WASp	0.6860725999999999	True
+Rac1	Whamy	1.060865	True
+Rac1	dock	1.1252303	
+Rac1	mbc	0.8945827	
+Pak3	Rac2	0.9348131	
+Hem	Arf79F	0.9348131	True
+Hem	Rac2	1.0952826	
+Hem	SCAR	0.7063527	True
+Hem	WASp	1.060865	
+Hem	dock	1.0952826	
+Hem	drk	1.1252303	
+sns	Crk	0.9348131	
+sns	dock	0.7214822	
+sns	kirre	0.6613919	
+sns	rst	0.5764158	True
+Ced-12	Crk	1.1476479	
+Ced-12	Rac2	1.1252303	
+Ced-12	drk	1.1252303	
+Ced-12	mbc	0.7125587	True
+sqh	Rho1	0.9484353000000001	True
+drk	Arp3	0.9785927	True
+drk	Crk	0.6936151999999999	True
+drk	Pak	1.0952826	
+drk	Rok	0.9785927	
+drk	SCAR	1.1252303	
+drk	WASp	1.0714511	
+drk	beta-Spec	1.1252303	
+drk	dock	0.7172736	
+drk	kirre	1.1252303	
+drk	mbc	1.0750392	
+drk	rst	1.1252303	
+SCAR	Crk	1.1252303	
+SCAR	Rac2	1.1252303	
+SCAR	WASp	0.7011461999999999	True
+SCAR	dock	0.7358376	
+SCAR	mbc	1.1252303	
+blow	Crk	0.8278468000000001	True
+blow	Vrp1	0.9348131	
+blow	rols	0.9670238999999999	
+Rac2	Arf79F	1.1717938	
+Rac2	Pak	0.6974895999999999	
+Rac2	Rab11	1.1717938	
+Rac2	WASp	1.0952826	
+Rac2	dock	1.1252303	
+Rac2	mbc	1.0727806	
+Whamy	WASp	1.060865	
+Pak	Arpc1	1.1252303	
+Pak	dock	0.567334	True
+Pak	mbc	1.1252303	
+Arf79F	Rab11	0.8486806	True
+rols	kirre	0.6620813	True
+rols	mbc	0.6693754	True
+rols	sls	1.0546616000000002	True
+mbc	Crk	0.5652607	True
+mbc	dock	1.0952826	
+dock	Crk	1.0952826	
+dock	Vrp1	0.7738670999999999	True
+dock	WASp	0.7201811	
+dock	kirre	0.7660425000000001	
+dock	rst	0.8266118	
+dock	siz	1.1717938	
+siz	Arf51F	0.8557636999999999	True
+Arpc1	Arp3	0.7657423000000001	True
+Arpc1	WASp	1.1071073	
+sls	Arf51F	1.1717938	True
+kirre	rst	0.9310917	
+Rok	Rho1	0.5655272	True
+Arp3	WASp	1.140227	
+Crk	Vrp1	0.9348131	
+Crk	WASp	0.8326261999999999	
+Vrp1	WASp	0.7966754	

@@ -1,0 +1,92 @@
+protein1	protein2	cost	in_solution
+pip	wbl	0.6412891	True
+Rho1	Rok	0.5655272	True
+Rho1	dia	1.1252303	
+Rho1	sqh	0.9484353000000001	True
+SCAR	Crk	1.1252303	
+SCAR	Hem	0.7063527	True
+SCAR	Rac1	1.1252303	
+SCAR	Rac2	1.1252303	
+SCAR	WASp	0.7011461999999999	True
+SCAR	dock	0.7358376	
+SCAR	drk	1.1252303	
+SCAR	mbc	1.1252303	
+Whamy	Rac1	1.060865	True
+Whamy	WASp	1.060865	
+wbl	Arpc1	1.1717938	True
+Arp3	Arpc1	0.7657423000000001	True
+Arp3	WASp	1.140227	
+Arp3	drk	0.9785927	True
+WASp	Arpc1	1.1071073	
+WASp	Crk	0.8326261999999999	
+WASp	Hem	1.060865	
+WASp	Rac1	0.6860725999999999	True
+WASp	Rac2	1.0952826	
+WASp	Vrp1	0.7966754	
+WASp	dock	0.7201811	
+WASp	drk	1.0714511	
+sns	Crk	0.9348131	
+sns	dock	0.7214822	
+sns	hbs	0.653712	
+sns	kirre	0.6613919	
+sns	rst	0.5764158	True
+sls	Arf51F	1.1717938	True
+sls	rols	1.0546616000000002	True
+dock	Crk	1.0952826	
+dock	Hem	1.0952826	
+dock	Pak	0.567334	True
+dock	Rac1	1.1252303	
+dock	Rac2	1.1252303	
+dock	Vrp1	0.7738670999999999	True
+dock	drk	0.7172736	True
+dock	hbs	0.7214822	
+dock	kirre	0.7660425000000001	
+dock	mbc	1.0952826	
+dock	rst	0.8266118	
+dock	siz	1.1717938	
+Hem	Arf79F	0.9348131	True
+Hem	Rac1	1.0952826	
+Hem	Rac2	1.0952826	
+Hem	drk	1.1252303	
+Arf79F	Rab11	0.8486806	True
+Arf79F	Rac2	1.1717938	
+Pak	Arpc1	1.1252303	
+Pak	Rac1	0.5576127	True
+Pak	Rac2	0.6974895999999999	
+Pak	drk	1.0952826	
+Pak	mbc	1.1252303	
+alpha-Spec	Crk	1.1717938	
+alpha-Spec	Rac1	1.1717938	
+alpha-Spec	beta-Spec	0.5371136999999999	True
+alpha-Spec	rols	1.1252303	True
+rols	blow	0.9670238999999999	
+rols	kirre	0.6620813	True
+rols	mbc	0.6693754	True
+Rac2	Ced-12	1.1252303	
+Rac2	Pak3	0.9348131	
+Rac2	Rab11	1.1717938	
+Rac2	Rac1	0.599155	True
+Rac2	dia	1.1252303	True
+Rac2	mbc	1.0727806	
+hbs	kirre	0.6457133	True
+hbs	rst	0.6464098	True
+rst	drk	1.1252303	
+rst	kirre	0.9310917	
+Ced-12	Crk	1.1476479	
+Ced-12	Rac1	1.1252303	
+Ced-12	drk	1.1252303	
+Ced-12	mbc	0.7125587	True
+blow	Crk	0.8278468000000001	True
+blow	Vrp1	0.9348131	
+Pak3	Rac1	0.6315214	True
+Arf51F	siz	0.8557636999999999	True
+dia	Rac1	1.1252303	
+Rok	Rac1	0.7949651	True
+Rok	drk	0.9785927	
+Vrp1	Crk	0.9348131	
+Crk	drk	0.6936151999999999	True
+Crk	mbc	0.5652607	True
+beta-Spec	drk	1.1252303	
+mbc	Rac1	0.8945827	
+mbc	drk	1.0750392	
+kirre	drk	1.1252303	

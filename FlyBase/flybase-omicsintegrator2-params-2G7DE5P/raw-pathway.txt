@@ -1,0 +1,102 @@
+protein1	protein2	cost	in_solution
+kirre	dock	0.7660425000000001	
+kirre	drk	1.1252303	
+kirre	hbs	0.6457133	True
+kirre	rols	0.6620813	True
+kirre	rst	0.9310917	
+kirre	sns	0.6613919	
+sqh	Rho1	0.9484353000000001	
+sqh	sqa	0.7812313	True
+CenB1A	Rab11	0.9348131	True
+CenB1A	dock	1.1252303	True
+CenB1A	drk	1.1252303	
+rols	alpha-Spec	1.1252303	
+rols	blow	0.9670238999999999	True
+rols	mbc	0.6693754	True
+rols	sls	1.0546616000000002	True
+rols	spn-B	0.8696978999999999	True
+Rac1	Ced-12	1.1252303	
+Rac1	Hem	1.0952826	
+Rac1	Pak	0.5576127	
+Rac1	Pak3	0.6315214	
+Rac1	Rac2	0.599155	
+Rac1	Rok	0.7949651	True
+Rac1	SCAR	1.1252303	
+Rac1	WASp	0.6860725999999999	
+Rac1	Whamy	1.060865	True
+Rac1	alpha-Spec	1.1717938	
+Rac1	dia	1.1252303	
+Rac1	dock	1.1252303	
+Rac1	mbc	0.8945827	
+WASp	Arp3	1.140227	True
+WASp	Arpc1	1.1071073	
+WASp	Crk	0.8326261999999999	
+WASp	Hem	1.060865	
+WASp	Rac2	1.0952826	
+WASp	SCAR	0.7011461999999999	
+WASp	Vrp1	0.7966754	True
+WASp	Whamy	1.060865	True
+WASp	dock	0.7201811	
+WASp	drk	1.0714511	
+Ced-12	Crk	1.1476479	
+Ced-12	Rac2	1.1252303	True
+Ced-12	drk	1.1252303	True
+Ced-12	mbc	0.7125587	True
+mbc	Crk	0.5652607	
+mbc	Pak	1.1252303	True
+mbc	Rac2	1.0727806	
+mbc	SCAR	1.1252303	True
+mbc	dock	1.0952826	
+mbc	drk	1.0750392	
+mbc	ps	0.9540791	
+beta-Spec	alpha-Spec	0.5371136999999999	True
+beta-Spec	drk	1.1252303	
+beta-Spec	spn-B	0.7949651	True
+Vrp1	Crk	0.9348131	
+Vrp1	blow	0.9348131	True
+Vrp1	dock	0.7738670999999999	True
+Pak	Arpc1	1.1252303	
+Pak	Rac2	0.6974895999999999	
+Pak	dock	0.567334	
+Pak	drk	1.0952826	
+Rab11	Arf79F	0.8486806	
+Rab11	Rac2	1.1717938	
+sqa	drk	0.9785927	True
+rst	dock	0.8266118	
+rst	drk	1.1252303	
+rst	hbs	0.6464098	True
+rst	sns	0.5764158	True
+sns	Crk	0.9348131	
+sns	dock	0.7214822	
+sns	hbs	0.653712	
+Rho1	Rok	0.5655272	True
+Rho1	dia	1.1252303	
+Pak3	Rac2	0.9348131	True
+Arf51F	siz	0.8557636999999999	True
+Arf51F	sls	1.1717938	True
+siz	dock	1.1717938	
+SCAR	Crk	1.1252303	
+SCAR	Hem	0.7063527	True
+SCAR	Rac2	1.1252303	
+SCAR	dock	0.7358376	
+SCAR	drk	1.1252303	
+hbs	dock	0.7214822	
+blow	Crk	0.8278468000000001	True
+ps	Whamy	0.9540791	True
+ps	pip	0.9540791	True
+dia	Rac2	1.1252303	True
+Arp3	Arpc1	0.7657423000000001	
+Arp3	Arpc4	1.1432672	True
+Arp3	drk	0.9785927	
+Hem	Arf79F	0.9348131	True
+Hem	Rac2	1.0952826	
+Hem	dock	1.0952826	
+Hem	drk	1.1252303	
+Arpc1	Arpc4	1.1432672	True
+Crk	alpha-Spec	1.1717938	
+Crk	dock	1.0952826	
+Crk	drk	0.6936151999999999	
+Rac2	Arf79F	1.1717938	
+Rac2	dock	1.1252303	
+dock	drk	0.7172736	
+Rok	drk	0.9785927	

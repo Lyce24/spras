@@ -1,0 +1,92 @@
+protein1	protein2	in_solution	cost
+Rac2	Arf79F		1.1717938
+Rac2	Ced-12		1.1252303
+Rac2	Hem		1.0952826
+Rac2	Pak		0.6974895999999999
+Rac2	Pak3		0.9348131
+Rac2	Rab11		1.1717938
+Rac2	Rac1	True	0.599155
+Rac2	SCAR		1.1252303
+Rac2	WASp		1.0952826
+Rac2	dia	True	1.1252303
+Rac2	dock		1.1252303
+Rac2	mbc		1.0727806
+blow	Crk	True	0.8278468000000001
+blow	Vrp1		0.9348131
+blow	rols		0.9670238999999999
+Arf51F	siz	True	0.8557636999999999
+Arf51F	sls	True	1.1717938
+Pak3	Rac1	True	0.6315214
+Rho1	Rok	True	0.5655272
+Rho1	dia		1.1252303
+Rho1	sqh	True	0.9484353000000001
+Whamy	Rac1	True	1.060865
+Whamy	WASp		1.060865
+sns	Crk		0.9348131
+sns	dock		0.7214822
+sns	hbs		0.653712
+sns	kirre		0.6613919
+sns	rst	True	0.5764158
+wbl	Arpc1	True	1.1717938
+wbl	pip	True	0.6412891
+Arp3	Arpc1	True	0.7657423000000001
+Arp3	WASp		1.140227
+Arp3	drk	True	0.9785927
+Ced-12	Crk		1.1476479
+Ced-12	Rac1		1.1252303
+Ced-12	drk		1.1252303
+Ced-12	mbc	True	0.7125587
+beta-Spec	alpha-Spec	True	0.5371136999999999
+beta-Spec	drk		1.1252303
+Hem	Arf79F	True	0.9348131
+Hem	Rac1		1.0952826
+Hem	SCAR	True	0.7063527
+Hem	WASp		1.060865
+Hem	dock		1.0952826
+Hem	drk		1.1252303
+Arf79F	Rab11	True	0.8486806
+siz	dock		1.1717938
+Rac1	Pak	True	0.5576127
+Rac1	Rok	True	0.7949651
+Rac1	SCAR		1.1252303
+Rac1	WASp	True	0.6860725999999999
+Rac1	alpha-Spec		1.1717938
+Rac1	dia		1.1252303
+Rac1	dock		1.1252303
+Rac1	mbc		0.8945827
+Pak	Arpc1		1.1252303
+Pak	dock	True	0.567334
+Pak	drk		1.0952826
+Pak	mbc		1.1252303
+rols	alpha-Spec	True	1.1252303
+rols	kirre	True	0.6620813
+rols	mbc	True	0.6693754
+rols	sls	True	1.0546616000000002
+SCAR	Crk		1.1252303
+SCAR	WASp	True	0.7011461999999999
+SCAR	dock		0.7358376
+SCAR	drk		1.1252303
+SCAR	mbc		1.1252303
+kirre	dock		0.7660425000000001
+kirre	drk		1.1252303
+kirre	hbs	True	0.6457133
+kirre	rst		0.9310917
+mbc	Crk	True	0.5652607
+mbc	dock		1.0952826
+mbc	drk		1.0750392
+drk	Crk	True	0.6936151999999999
+drk	Rok		0.9785927
+drk	WASp		1.0714511
+drk	dock		0.7172736
+drk	rst		1.1252303
+WASp	Arpc1		1.1071073
+WASp	Crk		0.8326261999999999
+WASp	Vrp1		0.7966754
+WASp	dock		0.7201811
+Crk	Vrp1		0.9348131
+Crk	alpha-Spec		1.1717938
+Crk	dock		1.0952826
+rst	dock		0.8266118
+rst	hbs	True	0.6464098
+dock	Vrp1	True	0.7738670999999999
+dock	hbs	True	0.7214822

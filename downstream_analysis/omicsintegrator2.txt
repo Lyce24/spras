@@ -1,0 +1,7 @@
+gene	count	percentage	receptor
+wbl	21	0.6	False
+ps	13	0.3714	False
+Arpc4	7	0.2	False
+spn-B	6	0.1714	False
+CenB1A	6	0.1714	False
+sqa	6	0.1714	False

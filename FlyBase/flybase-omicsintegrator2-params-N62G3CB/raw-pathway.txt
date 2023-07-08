@@ -1,0 +1,93 @@
+protein1	protein2	cost	in_solution
+Crk	Ced-12	1.1476479	
+Crk	SCAR	1.1252303	
+Crk	Vrp1	0.9348131	
+Crk	WASp	0.8326261999999999	
+Crk	alpha-Spec	1.1717938	
+Crk	blow	0.8278468000000001	True
+Crk	dock	1.0952826	
+Crk	drk	0.6936151999999999	
+Crk	mbc	0.5652607	True
+Crk	sns	0.9348131	
+dock	Hem	1.0952826	
+dock	Pak	0.567334	True
+dock	Rac1	1.1252303	
+dock	Rac2	1.1252303	
+dock	SCAR	0.7358376	
+dock	Vrp1	0.7738670999999999	True
+dock	WASp	0.7201811	
+dock	drk	0.7172736	
+dock	hbs	0.7214822	True
+dock	kirre	0.7660425000000001	
+dock	mbc	1.0952826	
+dock	rst	0.8266118	
+dock	siz	1.1717938	
+dock	sns	0.7214822	
+alpha-Spec	Rac1	1.1717938	
+alpha-Spec	beta-Spec	0.5371136999999999	True
+alpha-Spec	rols	1.1252303	True
+beta-Spec	drk	1.1252303	
+SCAR	Hem	0.7063527	True
+SCAR	Rac1	1.1252303	
+SCAR	Rac2	1.1252303	
+SCAR	WASp	0.7011461999999999	True
+SCAR	drk	1.1252303	
+SCAR	mbc	1.1252303	
+Rho1	Rok	0.5655272	True
+Rho1	dia	1.1252303	
+Rho1	sqh	0.9484353000000001	True
+Rac2	Arf79F	1.1717938	
+Rac2	Ced-12	1.1252303	
+Rac2	Hem	1.0952826	
+Rac2	Pak	0.6974895999999999	
+Rac2	Pak3	0.9348131	
+Rac2	Rab11	1.1717938	True
+Rac2	Rac1	0.599155	True
+Rac2	WASp	1.0952826	
+Rac2	dia	1.1252303	True
+Rac2	mbc	1.0727806	
+Vrp1	WASp	0.7966754	True
+Vrp1	blow	0.9348131	
+hbs	kirre	0.6457133	True
+hbs	rst	0.6464098	True
+hbs	sns	0.653712	
+Arp3	Arpc1	0.7657423000000001	True
+Arp3	WASp	1.140227	True
+Arp3	drk	0.9785927	
+Rac1	Ced-12	1.1252303	
+Rac1	Hem	1.0952826	
+Rac1	Pak	0.5576127	True
+Rac1	Pak3	0.6315214	True
+Rac1	Rok	0.7949651	True
+Rac1	WASp	0.6860725999999999	
+Rac1	Whamy	1.060865	True
+Rac1	dia	1.1252303	
+Rac1	mbc	0.8945827	
+mbc	Ced-12	0.7125587	True
+mbc	Pak	1.1252303	
+mbc	drk	1.0750392	
+mbc	ps	0.9540791	
+mbc	rols	0.6693754	True
+blow	rols	0.9670238999999999	
+kirre	drk	1.1252303	
+kirre	rols	0.6620813	True
+kirre	rst	0.9310917	
+kirre	sns	0.6613919	
+Pak	Arpc1	1.1252303	
+Pak	drk	1.0952826	
+pip	ps	0.9540791	True
+Arf51F	siz	0.8557636999999999	True
+Arf51F	sls	1.1717938	True
+rols	sls	1.0546616000000002	True
+rst	drk	1.1252303	
+rst	sns	0.5764158	True
+Ced-12	drk	1.1252303	
+Arpc1	WASp	1.1071073	
+Rok	drk	0.9785927	True
+WASp	Hem	1.060865	
+WASp	Whamy	1.060865	
+WASp	drk	1.0714511	
+Whamy	ps	0.9540791	True
+Hem	Arf79F	0.9348131	True
+Hem	drk	1.1252303	
+Rab11	Arf79F	0.8486806	
