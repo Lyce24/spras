@@ -6,37 +6,37 @@ hash_length: 7
 singularity: false
 
 algorithms:
-  -
-    name: omicsintegrator1
-    params:
-      directed: false
-      include: true
-      run1:
-        b:
-          - 0.1
-          - 1
-          - 2.4
-          - 5
-          - 8
-          - 10
-        d:
-          - 10
-        g:
-          - 1e-3
-        r:
-          - 0
-        w:
-          - 1
-          - 2
-          - 4
-          - 8
-          - 10
-        mu:
-          - 0.0001
-          - 0.0005
-          - 0.001
-          - 0.005
-          - 0.01
+  # -
+  #   name: omicsintegrator1
+  #   params:
+  #     directed: false
+  #     include: true
+  #     run1:
+  #       b:
+  #         - 0.1
+  #         - 1
+  #         - 2.4
+  #         - 5
+  #         - 8
+  #         - 10
+  #       d:
+  #         - 10
+  #       g:
+  #         - 1e-3
+  #       r:
+  #         - 0
+  #       w:
+  #         - 1
+  #         - 2
+  #         - 4
+  #         - 8
+  #         - 10
+  #       mu:
+  #         - 0.0001
+  #         - 0.0005
+  #         - 0.001
+  #         - 0.005
+  #         - 0.01
 
   -
     name: omicsintegrator2
@@ -45,14 +45,20 @@ algorithms:
       include: true
       run1:
         b:
-          - 4
+          - 0.2
+          - 0.8
+          - 1.6
+          - 3.2
+          - 6.4
+          - 10
         g:
-          - 0
-      run2:
-        b:
           - 2
-        g:
-          - 3
+          - 4
+          - 6
+          - 8
+          - 10
+          - 15
+          - 20
 
 datasets:
   -
@@ -65,7 +71,7 @@ datasets:
     other_files: []
 reconstruction_settings:
   locations:
-    reconstruction_dir: FlyBase
+    reconstruction_dir: FlyBase/oi2
   run: true
 analysis:
   graphspace:

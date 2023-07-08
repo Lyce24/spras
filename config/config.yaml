@@ -35,12 +35,12 @@
 
         - name: "rwr"
           params:
-                include : true
+                include : false
                 directed : true
 
         - name: "tiedie"
           params:
-                include: true
+                include: false
                 directed: true
                 run1:
                     pagerank: [true]
@@ -48,7 +48,7 @@
 
         - name: "omicsintegrator1"
           params:
-                include: false
+                include: true
                 directed: false
                 run1:
                     r: [5]
@@ -59,7 +59,7 @@
 
         - name: "omicsintegrator2"
           params:
-                include: false
+                include: true
                 directed: false
                 run1:
                     b: [4]
@@ -117,17 +117,17 @@
 
                 #place the save path here
                 # TODO move to global
-                reconstruction_dir: "output"
+                reconstruction_dir: "output/test"
 
          run: true
 
  analysis:
         # Create one summary per pathway file and a single summary table for all pathways for each dataset
         summary:
-          include: true
+          include: false
         # Create output files for each pathway that can be visualized with GraphSpace
         graphspace:
-          include: true
+          include: false
         # Machine learning analysis (e.g. clustering) of the pathway output files for each dataset
         ml:
-          include: true
+          include: false

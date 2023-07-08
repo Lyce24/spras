@@ -6,16 +6,18 @@ from dash import Dash, Input, Output, callback, dcc, html
 
 app = Dash(__name__)
 
-
+print("Loading data...")
 source_gene_file = Path('./input/source_gene.txt')
+receptor_gene_file = Path('./input/receptor.txt')
 parent_dir = Path("./output/amigo2")
-flybase_parent_dir = Path("./FlyBase")
+flybase_parent_dir = Path("./FlyBase/")
 # Check whether the directory FlyBase exists
 
 cell_target_gene_file = Path('./input/cell_target_gene.txt')
 muscle_target_gene_file = Path('./input/muscle_target_gene.txt')
 
 source_gene = set()
+receptor_gene = set()
 cell_target_gene = set()
 muscle_target_gene = set()
 
@@ -98,6 +100,7 @@ def grab_data(parent_dir, gene_dict, algo_runs, algo, run_id):
 
 def produce_elements(G: nx.Graph, target_gene):
     source = 0
+    receptor = 0
     intermediate = 0
     target = 0
     elements = nx.cytoscape_data(G)
@@ -111,11 +114,16 @@ def produce_elements(G: nx.Graph, target_gene):
         elif target_gene is not None and elements['elements']['nodes'][i]['data']['id'] in target_gene:
             elements['elements']['nodes'][i]['classes'] = 'blue rectangle'
             elements['elements']['nodes'][i]['position'] = {
-                'x': 60 * target, 'y': 1000}
+                'x': 60 * target, 'y': 1600}
             target += 1
+        elif elements['elements']['nodes'][i]['data']['id'] in receptor_gene:
+            elements['elements']['nodes'][i]['classes'] = 'green rectangle'
+            elements['elements']['nodes'][i]['position'] = {
+                'x': 60 * receptor, 'y': 500}
+            receptor += 1
         else:
             elements['elements']['nodes'][i]['position'] = {
-                'x': 60 * intermediate, 'y': 500}
+                'x': 60 * intermediate, 'y': 1000}
             intermediate += 1
 
     for i in range(len(elements['elements']['edges'])):
@@ -183,6 +191,7 @@ def match_algo(term, algo, run_id):
         return {}
 
 generate_nodes(source_gene_file, source_gene)
+generate_nodes(receptor_gene_file, receptor_gene)
 generate_nodes(cell_target_gene_file, cell_target_gene)
 generate_nodes(muscle_target_gene_file, muscle_target_gene)
 
@@ -249,6 +258,13 @@ app.layout = html.Div([
                 'style': {
                     'background-color': 'red',
                     'line-color': 'red'
+                }
+            },
+            {
+                'selector': '.green',
+                'style': {
+                    'background-color': 'green',
+                    'line-color': 'green'
                 }
             },
             {

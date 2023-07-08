@@ -8,6 +8,8 @@ muscle_development_file = 'muscle-development.txt'
 cell_target_gene_file = 'cell_target_gene.txt'
 muscle_target_gene_file = 'muscle_target_gene.txt'
 alternative_source_gene_file = 'alternative_source_gene.txt'
+receptor_gene_file = 'drosophila-receptors.txt'
+receptor_output_file = 'receptor.txt'
 
 source_gene = set()
 gene_dict = {}
@@ -109,3 +111,15 @@ with open(alternative_source_gene_file, 'w') as f:
     f.write("NODEID\tsources\n")
     for i in source_gene:
         f.write(f"{i}\tTrue\n")
+
+receptor_set = set()
+with open(receptor_gene_file, 'r') as f:
+    for line in f:
+        if line.strip().split('\t')[0].split(':')[1] in gene_dict:
+            receptor_set.add(gene_dict[line.strip().split('\t')[0].split(':')[1]])
+        else:
+            print(line.strip().split('\t')[0].split(':')[1])
+            
+with open(receptor_output_file, 'w') as f:
+    for i in receptor_set:
+        f.write(f"{i}\n")
