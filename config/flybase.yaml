@@ -13,12 +13,11 @@ algorithms:
       include: true
       run1:
         b:
-          - 0.1
-          - 1
-          - 2.4
-          - 5
+          - 4
           - 8
           - 10
+          - 12
+          - 15
         d:
           - 10
         g:
@@ -27,37 +26,15 @@ algorithms:
           - 0
         w:
           - 1
+          - 1.5
           - 2
-          - 4
-          - 8
-          - 10
+          - 2.5
+          - 3
         mu:
           - 0.0001
+          - 0.0003
           - 0.0005
-          - 0.001
-          - 0.005
-          - 0.01
-
-  -
-    name: omicsintegrator2
-    params:
-      directed: false
-      include: true
-      run1:
-        b:
-          - 0.2
-          - 0.8
-          - 1.6
-          - 3.2
-          - 6.4
-          - 8
-          - 10
-        g:
-          - 0
-          - 1
-          - 2
-          - 3
-          - 4
+          - 0.0007
 
 datasets:
   -
@@ -70,7 +47,7 @@ datasets:
     other_files: []
 reconstruction_settings:
   locations:
-    reconstruction_dir: FlyBase/oi2
+    reconstruction_dir: output/flybase
   run: true
 analysis:
   graphspace:

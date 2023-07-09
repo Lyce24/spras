@@ -3,7 +3,7 @@ from pathlib import Path
 source_gene_file = Path('./input/source_gene.txt')
 receptor_gene_file = Path('./input/receptor.txt')
 parent_dir = Path("./output/amigo2")
-flybase_parent_dir = Path("./FlyBase")
+flybase_parent_dir = Path("./output/flybase")
 # Check whether the directory FlyBase exists
 
 cell_target_gene_file = Path('./input/cell_target_gene.txt')
@@ -16,8 +16,6 @@ muscle_target_gene = set()
 
 oi1_output_file = Path('./downstream_analysis/omicsintegrator1.txt')
 oi1_source_output_file = Path('./downstream_analysis/source_omicsintegrator1.txt')
-oi2_output_file = Path('./downstream_analysis/omicsintegrator2.txt')
-oi2_source_output_file = Path('./downstream_analysis/source_omicsintegrator2.txt')
 
 result_oi1_dict = {}
 result_oi2_dict = {}
@@ -26,8 +24,6 @@ result_source_oi2_dict = {}
 
 oi1_runs = [x for x in flybase_parent_dir.iterdir() if x.is_dir(
 ) and x.name.startswith('flybase-omicsintegrator1-params')]
-oi2_runs = [x for x in flybase_parent_dir.iterdir() if x.is_dir(
-) and x.name.startswith('flybase-omicsintegrator2-params')]
 
 def generate_nodes(nodes_file: Path, gene_set) -> None:
     """
@@ -79,7 +75,7 @@ def generate_diffusion_analysis(analysis_file: Path, gene_analysis_file, runs, r
                 f.write(item[0] + '\t' + str(item[1]) + '\t' + str(round((item[1] / len(runs)), 4)) + '\t' + 'True' + '\n')
             else:
                 f.write(item[0] + '\t' + str(item[1]) + '\t' + str(round((item[1] / len(runs)), 4)) + '\t' + 'False' + '\n')
-                
+
     with open(gene_analysis_file, 'w') as f:
         f.write('gene\tcount\tpercentage\n')
         for item in sorted_source_list:
@@ -134,7 +130,7 @@ def generate_fusion_analysis(process, algo) -> None:
                 f.write(item[0] + '\t' + str(item[1]) + '\t' + str(round((item[1] / len(runs)), 4)) + '\t' + 'True' + '\n')
             else:
                 f.write(item[0] + '\t' + str(item[1]) + '\t' + str(round((item[1] / len(runs)), 4)) + '\t' + 'False' + '\n')
-                
+
     with open(gene_analysis_file, 'w') as f:
         f.write('gene\tcount\tpercentage\tgene\n')
         for item in sorted_gene_list:
@@ -158,6 +154,7 @@ def generate_runs_info(process, algo):
         target_gene = set()
     
     run_dict = {}
+    param_dict = {}
     
     for run in runs:
         nodes = set()
@@ -178,24 +175,40 @@ def generate_runs_info(process, algo):
                 elif endpoints[1] in receptor_gene:
                     receptor_temp_set.add(endpoints[1])
         run_dict[str(run).split('-')[-1]] = (len(nodes), len(receptor_temp_set), len(gene_temp_set))
-
+        
+        if algo == 'omicsintegrator1':
+            with open(flybase_parent_dir / 'logs' / f'parameters-omicsintegrator1-params-{str(run).split("-")[-1]}.yaml') as f:
+                param = ""
+                for i, line in enumerate(f):
+                    if i == 0:
+                        param += f"b : {line.strip().split(':')[-1]}\t"
+                    elif i == 3:
+                        param += f"mu : {line.strip().split(':')[-1]}\t"
+                    elif i == 5:
+                        param += f"w : {line.strip().split(':')[-1]}\t"
+                param_dict[str(run).split('-')[-1]] = param
+        elif algo == 'rwr' or algo == 'pathlinker':
+            with open(parent_dir / 'logs' / f'parameters-{algo}-params-{str(run).split("-")[-1]}.yaml') as f:
+                param = ""
+                for line in f:
+                    param += line.strip() + '\t'
+                param_dict[str(run).split('-')[-1]] = param
+            
     # sorted the dictionary by the number of receptors
     sorted_runs = sorted(run_dict.items(), key=lambda x: x[1][1], reverse=True)
 
     with open(analysis_file, 'w') as f:
-        f.write('RunID\t# of Nodes\tReceptor Nodes\tPrize Nodes\n')
+        f.write('RunID\t# of Nodes\tReceptor Nodes\tPrize Nodes\tParams\n')
         for item in sorted_runs:
-            f.write(item[0] + '\t' + str(item[1][0]) + '\t' + str(item[1][1]) + '\t' + str(item[1][2]) + '\n')
-            
+            f.write(item[0] + '\t' + str(item[1][0]) + '\t' + str(item[1][1]) + '\t' + str(item[1][2]) + '\t' + param_dict[item[0]] + '\n')
+                
 generate_nodes(source_gene_file, source_gene)
 generate_nodes(receptor_gene_file, receptor_gene)
 generate_nodes(cell_target_gene_file, cell_target_gene)
 generate_nodes(muscle_target_gene_file, muscle_target_gene)
 generate_diffusion_analysis(oi1_output_file, oi1_source_output_file, oi1_runs, result_oi1_dict, result_source_oi1_dict)
-generate_diffusion_analysis(oi2_output_file, oi2_source_output_file, oi2_runs, result_oi2_dict, result_source_oi2_dict)
 
 generate_runs_info('flybase', 'omicsintegrator1')
-generate_runs_info('flybase', 'omicsintegrator2')
 
 for i in ['cell-cell-fusion', 'muscle-development']:
     for j in ['pathlinker', 'rwr']:

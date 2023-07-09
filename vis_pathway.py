@@ -10,8 +10,7 @@ print("Loading data...")
 source_gene_file = Path('./input/source_gene.txt')
 receptor_gene_file = Path('./input/receptor.txt')
 parent_dir = Path("./output/amigo2")
-flybase_parent_dir = Path("./FlyBase/")
-# Check whether the directory FlyBase exists
+flybase_parent_dir = Path("./output/flybase")
 
 cell_target_gene_file = Path('./input/cell_target_gene.txt')
 muscle_target_gene_file = Path('./input/muscle_target_gene.txt')
