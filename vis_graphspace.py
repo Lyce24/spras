@@ -93,14 +93,14 @@ def update_graphspace_graph(process, algo, run_id, source_size : int, intermedia
     for node in node_set:
         if node in source_gene:    
             G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'source node' + '; ' + 'Node Frequency: ' + node_dict[node])
-            G.add_node_style(node, shape='ellipse', color='red', border_color = 'red', width=source_size * float(node_dict[node]), height=source_size * float(node_dict[node]))
-        elif node in receptor_gene:
-            G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'receptor node' + '; ' + 'Node Frequency: ' + node_dict[node])
-            G.add_node_style(node, shape='triangle', color='blue', border_color= 'blue', width=intermediate_size * float(node_dict[node]), height=intermediate_size * float(node_dict[node]))
+            G.add_node_style(node, shape='rectangle', color='red', border_color = 'red', width=source_size * float(node_dict[node]), height=source_size * float(node_dict[node]))
+        elif target_set is not None and node in target_set:
+            G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'target node' + '; ' + 'Node Frequency: ' + node_dict[node])
+            G.add_node_style(node, shape='rectangle', color='green', border_color = 'green', width=source_size * float(node_dict[node]), height=source_size * float(node_dict[node]))
         else:
-            if target_set is not None and node in target_set:
-                G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'target node' + '; ' + 'Node Frequency: ' + node_dict[node])
-                G.add_node_style(node, shape='ellipse', color='green', border_color = 'green', width=source_size * float(node_dict[node]), height=source_size * float(node_dict[node]))
+            if node in receptor_gene:
+                G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'receptor node' + '; ' + 'Node Frequency: ' + node_dict[node])
+                G.add_node_style(node, shape='triangle', color='blue', border_color= 'blue', width=intermediate_size * float(node_dict[node]), height=intermediate_size * float(node_dict[node])) 
             else:
                 G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'intermediate node' + '; ' + 'Node Frequency: ' + node_dict[node])
                 G.add_node_style(node, shape='ellipse', color='grey', border_color = 'grey', width=intermediate_size * float(node_dict[node]), height=intermediate_size * float(node_dict[node]))
@@ -116,7 +116,7 @@ def update_graphspace_graph(process, algo, run_id, source_size : int, intermedia
     G.set_name(f'{process}-{algo}-{run_id}')
     G.set_tags([f'{process}', f'{algo}'])
     G.set_data(data={'description': f'Using {algo} for {process} analysis, run_id: {run_id}'})
-    graph = graphspace.udpate_graph(G)
+    graph = graphspace.update_graph(G)
     print(graph.id)
     print("Done.")
     
