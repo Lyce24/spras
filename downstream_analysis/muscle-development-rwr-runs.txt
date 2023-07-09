@@ -1,85 +1,85 @@
-RunID	# of Nodes	Receptor Nodes	Prize Nodes	Params
-XB3TEJ5	272	6	184	threshold: 0.0001	w: 0.4	
-6O6CLXG	252	5	174	threshold: 0.0001	w: 0.45	
-NVBHFRC	254	5	175	threshold: 0.0001	w: 0.5	
-XNMYKVT	236	5	163	threshold: 0.0001	w: 0.55	
-FSK2BK4	200	4	169	threshold: 0.0002	w: 0.45	
-MDSU6LY	121	4	98	threshold: 0.0001	w: 0.7	
-NYELO6L	198	4	168	threshold: 0.0002	w: 0.5	
-R42QNGH	222	4	155	threshold: 0.0001	w: 0.6	
-XBREK7I	176	4	123	threshold: 0.0001	w: 0.65	
-66K6FH5	116	3	109	threshold: 0.0006	w: 0.65	
-6VFMXX2	161	3	147	threshold: 0.0003	w: 0.55	
-FR53PGM	124	3	113	threshold: 0.0005	w: 0.65	
-FTTZS3C	102	3	90	threshold: 0.0003	w: 0.7	
-OO5XMGG	182	3	162	threshold: 0.0003	w: 0.5	
-PWHSGWA	173	3	150	threshold: 0.0002	w: 0.55	
-SOFNWGL	137	3	117	threshold: 0.0003	w: 0.65	
-TEW3YOJ	183	3	163	threshold: 0.0003	w: 0.45	
-TZN53AJ	115	3	97	threshold: 0.0002	w: 0.7	
-XQL5GCP	116	3	109	threshold: 0.0007	w: 0.65	
-YD2RNRQ	151	3	117	threshold: 0.0002	w: 0.65	
-Z7LNT6J	209	3	180	threshold: 0.0002	w: 0.4	
-ZR26PFB	127	3	114	threshold: 0.0004	w: 0.65	
-3LGSVP2	140	2	134	threshold: 0.0006	w: 0.6	
-6HDNQK6	155	2	139	threshold: 0.0003	w: 0.6	
-AQDP2GQ	108	2	103	threshold: 0.0008	w: 0.65	
-DYRX2JD	157	2	145	threshold: 0.0004	w: 0.55	
-HU6XPVQ	152	2	138	threshold: 0.0004	w: 0.6	
-LUBXAS3	93	2	85	threshold: 0.0006	w: 0.7	
-O3FCBIU	99	2	88	threshold: 0.0004	w: 0.7	
-OQWU5MV	92	2	85	threshold: 0.0009	w: 0.7	
-PCUW7DT	146	2	136	threshold: 0.0005	w: 0.6	
-Q7F2IFG	172	2	144	threshold: 0.0002	w: 0.6	
-T2WOGJC	92	2	85	threshold: 0.0008	w: 0.7	
-UAQ35PJ	92	2	85	threshold: 0.001	w: 0.7	
-WM3FE5H	92	2	85	threshold: 0.0007	w: 0.7	
-WQELYWL	98	2	88	threshold: 0.0005	w: 0.7	
-2SCQ33A	178	1	173	threshold: 0.0006	w: 0.4	
-4BCZU7N	139	1	138	threshold: 0.001	w: 0.55	
-6OKZRSR	192	1	176	threshold: 0.0003	w: 0.4	
-A5LUAG6	128	1	127	threshold: 0.001	w: 0.6	
-BHE7CQC	160	1	156	threshold: 0.0007	w: 0.5	
-BOBCPQJ	144	1	141	threshold: 0.0007	w: 0.55	
-C2DD4S2	155	1	153	threshold: 0.001	w: 0.5	
-CCVKV2X	155	1	153	threshold: 0.0009	w: 0.5	
-DFOOGQH	73	1	72	threshold: 0.003	w: 0.7	
-EBWJECS	166	1	157	threshold: 0.0005	w: 0.5	
-FAZNHSO	157	1	155	threshold: 0.0009	w: 0.45	
-FKDYTNJ	143	1	141	threshold: 0.0009	w: 0.55	
-H3XP2XU	143	1	141	threshold: 0.0008	w: 0.55	
-I4XCM56	149	1	143	threshold: 0.0005	w: 0.55	
-IBEF7HG	103	1	100	threshold: 0.0009	w: 0.65	
-JI7BGTX	156	1	153	threshold: 0.0008	w: 0.5	
-K7Q7TY7	167	1	158	threshold: 0.0005	w: 0.45	
-LJ3LDMP	133	1	130	threshold: 0.0008	w: 0.6	
-LK2SJZF	161	1	157	threshold: 0.0007	w: 0.45	
-N2JCALR	132	1	130	threshold: 0.0009	w: 0.6	
-N7UDXMA	161	1	156	threshold: 0.0006	w: 0.5	
-OU3ANAO	158	1	155	threshold: 0.0008	w: 0.45	
-P7V35HF	145	1	141	threshold: 0.0006	w: 0.55	
-QQWAET5	188	1	175	threshold: 0.0004	w: 0.4	
-QRXECXA	134	1	130	threshold: 0.0007	w: 0.6	
-QWGYUWA	103	1	100	threshold: 0.001	w: 0.65	
-T5NGIG3	172	1	160	threshold: 0.0004	w: 0.45	
-UJDQFU5	171	1	159	threshold: 0.0004	w: 0.5	
-VE7EYUT	163	1	157	threshold: 0.0006	w: 0.45	
-Y3MKEO7	157	1	155	threshold: 0.001	w: 0.45	
-Y4VMOJF	83	1	79	threshold: 0.002	w: 0.7	
-ZEKYHTM	183	1	174	threshold: 0.0005	w: 0.4	
-526QX6L	170	0	169	threshold: 0.002	w: 0.4	
-5TFSVVR	99	0	98	threshold: 0.002	w: 0.65	
-7H5YTIX	174	0	172	threshold: 0.0008	w: 0.4	
-D2AN633	170	0	169	threshold: 0.003	w: 0.4	
-EJ4RVEV	137	0	137	threshold: 0.003	w: 0.55	
-GMQIM4D	174	0	172	threshold: 0.0009	w: 0.4	
-HGKEI2L	148	0	148	threshold: 0.002	w: 0.45	
-HJZLMHD	137	0	137	threshold: 0.002	w: 0.55	
-JTKQEJE	96	0	96	threshold: 0.003	w: 0.65	
-S67GJRQ	126	0	126	threshold: 0.002	w: 0.6	
-S7YDZEU	176	0	173	threshold: 0.0007	w: 0.4	
-SQSTEIR	146	0	146	threshold: 0.002	w: 0.5	
-TJQKURZ	146	0	146	threshold: 0.003	w: 0.5	
-VA3OQDU	126	0	126	threshold: 0.003	w: 0.6	
-YPJZRGO	148	0	148	threshold: 0.003	w: 0.45	
-ZHTPY5C	174	0	172	threshold: 0.001	w: 0.4	
+RunID	# of Nodes	Receptor Nodes	Source Nodes(Total: 34)	Target Nodes(Total: 171)	Params
+XB3TEJ5	272	11	34	150	threshold: 0.0001	w: 0.4	
+NVBHFRC	254	10	34	141	threshold: 0.0001	w: 0.5	
+6O6CLXG	252	9	34	140	threshold: 0.0001	w: 0.45	
+XNMYKVT	236	8	33	130	threshold: 0.0001	w: 0.55	
+FSK2BK4	200	7	34	135	threshold: 0.0002	w: 0.45	
+NYELO6L	198	7	33	135	threshold: 0.0002	w: 0.5	
+R42QNGH	222	7	32	123	threshold: 0.0001	w: 0.6	
+MDSU6LY	121	6	28	70	threshold: 0.0001	w: 0.7	
+XBREK7I	176	6	31	92	threshold: 0.0001	w: 0.65	
+Z7LNT6J	209	6	34	146	threshold: 0.0002	w: 0.4	
+FTTZS3C	102	5	25	65	threshold: 0.0003	w: 0.7	
+OO5XMGG	182	5	32	130	threshold: 0.0003	w: 0.5	
+TEW3YOJ	183	5	33	130	threshold: 0.0003	w: 0.45	
+TZN53AJ	115	5	27	70	threshold: 0.0002	w: 0.7	
+6VFMXX2	161	4	32	115	threshold: 0.0003	w: 0.55	
+LUBXAS3	93	4	25	60	threshold: 0.0006	w: 0.7	
+O3FCBIU	99	4	25	63	threshold: 0.0004	w: 0.7	
+OQWU5MV	92	4	25	60	threshold: 0.0009	w: 0.7	
+PWHSGWA	173	4	33	117	threshold: 0.0002	w: 0.55	
+SOFNWGL	137	4	30	87	threshold: 0.0003	w: 0.65	
+T2WOGJC	92	4	25	60	threshold: 0.0008	w: 0.7	
+UAQ35PJ	92	4	25	60	threshold: 0.001	w: 0.7	
+WM3FE5H	92	4	25	60	threshold: 0.0007	w: 0.7	
+WQELYWL	98	4	25	63	threshold: 0.0005	w: 0.7	
+YD2RNRQ	151	4	30	87	threshold: 0.0002	w: 0.65	
+2SCQ33A	178	3	34	139	threshold: 0.0006	w: 0.4	
+66K6FH5	116	3	28	81	threshold: 0.0006	w: 0.65	
+6HDNQK6	155	3	32	107	threshold: 0.0003	w: 0.6	
+6OKZRSR	192	3	34	142	threshold: 0.0003	w: 0.4	
+BHE7CQC	160	3	32	124	threshold: 0.0007	w: 0.5	
+DYRX2JD	157	3	32	113	threshold: 0.0004	w: 0.55	
+EBWJECS	166	3	32	125	threshold: 0.0005	w: 0.5	
+FR53PGM	124	3	30	83	threshold: 0.0005	w: 0.65	
+HU6XPVQ	152	3	32	106	threshold: 0.0004	w: 0.6	
+JI7BGTX	156	3	32	121	threshold: 0.0008	w: 0.5	
+K7Q7TY7	167	3	33	125	threshold: 0.0005	w: 0.45	
+LK2SJZF	161	3	33	124	threshold: 0.0007	w: 0.45	
+N7UDXMA	161	3	32	124	threshold: 0.0006	w: 0.5	
+OU3ANAO	158	3	33	122	threshold: 0.0008	w: 0.45	
+Q7F2IFG	172	3	32	112	threshold: 0.0002	w: 0.6	
+QQWAET5	188	3	34	141	threshold: 0.0004	w: 0.4	
+T5NGIG3	172	3	33	127	threshold: 0.0004	w: 0.45	
+UJDQFU5	171	3	32	127	threshold: 0.0004	w: 0.5	
+VE7EYUT	163	3	33	124	threshold: 0.0006	w: 0.45	
+XQL5GCP	116	3	28	81	threshold: 0.0007	w: 0.65	
+Y4VMOJF	83	3	25	54	threshold: 0.002	w: 0.7	
+ZEKYHTM	183	3	34	140	threshold: 0.0005	w: 0.4	
+ZR26PFB	127	3	30	84	threshold: 0.0004	w: 0.65	
+3LGSVP2	140	2	31	103	threshold: 0.0006	w: 0.6	
+7H5YTIX	174	2	34	138	threshold: 0.0008	w: 0.4	
+AQDP2GQ	108	2	28	75	threshold: 0.0008	w: 0.65	
+C2DD4S2	155	2	32	121	threshold: 0.001	w: 0.5	
+CCVKV2X	155	2	32	121	threshold: 0.0009	w: 0.5	
+FAZNHSO	157	2	33	122	threshold: 0.0009	w: 0.45	
+GMQIM4D	174	2	34	138	threshold: 0.0009	w: 0.4	
+I4XCM56	149	2	31	112	threshold: 0.0005	w: 0.55	
+PCUW7DT	146	2	32	104	threshold: 0.0005	w: 0.6	
+S7YDZEU	176	2	34	139	threshold: 0.0007	w: 0.4	
+Y3MKEO7	157	2	33	122	threshold: 0.001	w: 0.45	
+ZHTPY5C	174	2	34	138	threshold: 0.001	w: 0.4	
+4BCZU7N	139	1	31	107	threshold: 0.001	w: 0.55	
+526QX6L	170	1	34	135	threshold: 0.002	w: 0.4	
+A5LUAG6	128	1	31	96	threshold: 0.001	w: 0.6	
+BOBCPQJ	144	1	31	110	threshold: 0.0007	w: 0.55	
+D2AN633	170	1	34	135	threshold: 0.003	w: 0.4	
+DFOOGQH	73	1	25	47	threshold: 0.003	w: 0.7	
+FKDYTNJ	143	1	31	110	threshold: 0.0009	w: 0.55	
+H3XP2XU	143	1	31	110	threshold: 0.0008	w: 0.55	
+IBEF7HG	103	1	28	72	threshold: 0.0009	w: 0.65	
+LJ3LDMP	133	1	31	99	threshold: 0.0008	w: 0.6	
+N2JCALR	132	1	31	99	threshold: 0.0009	w: 0.6	
+P7V35HF	145	1	31	110	threshold: 0.0006	w: 0.55	
+QRXECXA	134	1	31	99	threshold: 0.0007	w: 0.6	
+QWGYUWA	103	1	28	72	threshold: 0.001	w: 0.65	
+5TFSVVR	99	0	28	70	threshold: 0.002	w: 0.65	
+EJ4RVEV	137	0	31	106	threshold: 0.003	w: 0.55	
+HGKEI2L	148	0	32	116	threshold: 0.002	w: 0.45	
+HJZLMHD	137	0	31	106	threshold: 0.002	w: 0.55	
+JTKQEJE	96	0	28	68	threshold: 0.003	w: 0.65	
+S67GJRQ	126	0	31	95	threshold: 0.002	w: 0.6	
+SQSTEIR	146	0	31	115	threshold: 0.002	w: 0.5	
+TJQKURZ	146	0	31	115	threshold: 0.003	w: 0.5	
+VA3OQDU	126	0	31	95	threshold: 0.003	w: 0.6	
+YPJZRGO	148	0	32	116	threshold: 0.003	w: 0.45	

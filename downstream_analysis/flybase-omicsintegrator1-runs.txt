@@ -1,101 +1,101 @@
-RunID	# of Nodes	Receptor Nodes	Prize Nodes	Params
-5E6I7VA	48	2	34	b :  8	mu :  0.0003	w :  3	
-65ZYXI6	43	2	34	b :  15	mu :  0.0005	w :  2	
-BMUGX4D	43	2	34	b :  4	mu :  0.0005	w :  2	
-D44NOBD	45	2	34	b :  8	mu :  0.0003	w :  1.5	
-EE6ONVL	47	2	34	b :  8	mu :  0.0003	w :  2.5	
-F7XXQYY	45	2	34	b :  12	mu :  0.0003	w :  1.5	
-FZKWCV7	47	2	34	b :  15	mu :  0.0001	w :  3	
-H7IJDN2	48	2	34	b :  10	mu :  0.0003	w :  3	
-IHX72UH	47	2	34	b :  4	mu :  0.0003	w :  2.5	
-JJ7BMKK	45	2	34	b :  10	mu :  0.0003	w :  1.5	
-M53IYTL	48	2	34	b :  4	mu :  0.0003	w :  3	
-OYPIWSA	45	2	34	b :  15	mu :  0.0003	w :  1.5	
-PIAOFRV	48	2	34	b :  15	mu :  0.0003	w :  3	
-QBX3VAI	45	2	34	b :  4	mu :  0.0003	w :  1.5	
-R4ZMJ4E	47	2	34	b :  10	mu :  0.0001	w :  3	
-RBTFEBU	47	2	34	b :  4	mu :  0.0001	w :  3	
-S5PW2QN	47	2	34	b :  12	mu :  0.0001	w :  3	
-SQ6EJBK	43	2	34	b :  12	mu :  0.0005	w :  2	
-SSJGAYC	47	2	34	b :  10	mu :  0.0003	w :  2.5	
-TETAQ7G	47	2	34	b :  15	mu :  0.0003	w :  2.5	
-TNB5AS6	43	2	34	b :  8	mu :  0.0005	w :  2	
-V2WAIVV	47	2	34	b :  12	mu :  0.0003	w :  2.5	
-X2KVCJ7	43	2	34	b :  10	mu :  0.0005	w :  2	
-XQ2CHSQ	48	2	34	b :  12	mu :  0.0003	w :  3	
-YYHXNQO	47	2	34	b :  8	mu :  0.0001	w :  3	
-3BE2VMX	42	1	34	b :  4	mu :  0.0005	w :  3	
-3S7B2YL	46	1	34	b :  8	mu :  0.0005	w :  2.5	
-3THBCMO	46	1	34	b :  10	mu :  0.0001	w :  1	
-42RXCKY	45	1	34	b :  8	mu :  0.0007	w :  1	
-4FTOSH4	43	1	34	b :  8	mu :  0.0007	w :  2.5	
-4GF3OJI	43	1	34	b :  4	mu :  0.0007	w :  2.5	
-4GTIV2K	43	1	34	b :  4	mu :  0.0007	w :  2	
-4KZ2P6V	44	1	34	b :  12	mu :  0.0003	w :  2	
-5DALIQN	43	1	34	b :  12	mu :  0.0001	w :  2	
-5J5DEP7	46	1	34	b :  15	mu :  0.0001	w :  1	
-5WIMAER	45	1	34	b :  12	mu :  0.0005	w :  1	
-6DMYAQ5	46	1	34	b :  8	mu :  0.0001	w :  2.5	
-6GPEPXO	44	1	34	b :  15	mu :  0.0003	w :  2	
-6VF6HJD	47	1	34	b :  10	mu :  0.0001	w :  1.5	
-76R7X7S	43	1	34	b :  15	mu :  0.0007	w :  2.5	
-7ALVMP7	44	1	34	b :  8	mu :  0.0003	w :  2	
-7DWOKHU	45	1	34	b :  8	mu :  0.0005	w :  1	
-7RO24XR	43	1	34	b :  15	mu :  0.0007	w :  2	
-A62325L	45	1	34	b :  12	mu :  0.0007	w :  1	
-ABLIZL2	43	1	34	b :  12	mu :  0.0007	w :  1.5	
-ACWFS6Z	42	1	34	b :  15	mu :  0.0005	w :  3	
-AMUKNFM	43	1	34	b :  12	mu :  0.0007	w :  2	
-AZMDBZ5	43	1	34	b :  8	mu :  0.0007	w :  1.5	
-B3F2WIQ	42	1	34	b :  12	mu :  0.0005	w :  3	
-B7DWSPL	43	1	34	b :  10	mu :  0.0007	w :  2.5	
-BE4OGT3	47	1	34	b :  15	mu :  0.0001	w :  1.5	
-BRTPDIR	45	1	34	b :  10	mu :  0.0007	w :  1	
-CYX3TF3	43	1	34	b :  10	mu :  0.0001	w :  2	
-DND7HCD	47	1	34	b :  12	mu :  0.0003	w :  1	
-F7DXOND	46	1	34	b :  8	mu :  0.0001	w :  1	
-FJNUJVZ	47	1	34	b :  8	mu :  0.0003	w :  1	
-G4NVXNK	46	1	34	b :  15	mu :  0.0005	w :  2.5	
-GADSDYB	43	1	34	b :  4	mu :  0.0001	w :  2	
-GIFMV5W	43	1	34	b :  8	mu :  0.0001	w :  2	
-GSUKVKR	47	1	34	b :  12	mu :  0.0001	w :  1.5	
-HBYWGF7	45	1	34	b :  15	mu :  0.0007	w :  1	
-HKQPJGL	46	1	34	b :  15	mu :  0.0001	w :  2.5	
-HQFFFMV	46	1	34	b :  10	mu :  0.0001	w :  2.5	
-IKUK7LR	42	1	34	b :  10	mu :  0.0005	w :  3	
-IUM22NF	47	1	34	b :  15	mu :  0.0003	w :  1	
-KH554TX	43	1	34	b :  12	mu :  0.0007	w :  2.5	
-L57L4I2	45	1	34	b :  15	mu :  0.0005	w :  1	
-L6NTD3J	45	1	34	b :  10	mu :  0.0005	w :  1	
-L7DJIQ7	46	1	34	b :  12	mu :  0.0001	w :  2.5	
-NKM356K	44	1	34	b :  4	mu :  0.0003	w :  2	
-OB4JNST	43	1	34	b :  8	mu :  0.0007	w :  2	
-PSRKZ45	43	1	34	b :  15	mu :  0.0007	w :  1.5	
-PWG5KBJ	46	1	34	b :  12	mu :  0.0001	w :  1	
-Q56HY5E	47	1	34	b :  8	mu :  0.0001	w :  1.5	
-R7YYUBZ	46	1	34	b :  4	mu :  0.0005	w :  2.5	
-RA34VBH	45	1	34	b :  4	mu :  0.0007	w :  1	
-RGDZHUV	47	1	34	b :  4	mu :  0.0003	w :  1	
-SN7QOFL	42	1	34	b :  8	mu :  0.0005	w :  3	
-TPVQGLJ	46	1	34	b :  4	mu :  0.0001	w :  1	
-TXWJR4K	43	1	34	b :  15	mu :  0.0001	w :  2	
-UIJR4UQ	43	1	34	b :  4	mu :  0.0007	w :  1.5	
-WDOSC62	44	1	34	b :  10	mu :  0.0003	w :  2	
-WIMQV5F	46	1	34	b :  4	mu :  0.0001	w :  2.5	
-WJRR5S2	43	1	34	b :  10	mu :  0.0007	w :  2	
-WRRKHVS	45	1	34	b :  4	mu :  0.0005	w :  1	
-WXRT5LZ	43	1	34	b :  10	mu :  0.0007	w :  1.5	
-XR2RZ7E	46	1	34	b :  10	mu :  0.0005	w :  2.5	
-YJULEXT	47	1	34	b :  4	mu :  0.0001	w :  1.5	
-YMG6NZN	46	1	34	b :  12	mu :  0.0005	w :  2.5	
-YPHNPVC	47	1	34	b :  10	mu :  0.0003	w :  1	
-4MOQQON	42	0	34	b :  12	mu :  0.0007	w :  3	
-7A3FRBU	45	0	34	b :  15	mu :  0.0005	w :  1.5	
-AV7AC7J	45	0	34	b :  8	mu :  0.0005	w :  1.5	
-ENXCXC3	42	0	34	b :  10	mu :  0.0007	w :  3	
-GTNVX6C	45	0	34	b :  10	mu :  0.0005	w :  1.5	
-N6RLHXB	45	0	34	b :  4	mu :  0.0005	w :  1.5	
-PT2XYRG	42	0	34	b :  4	mu :  0.0007	w :  3	
-SX2R7J2	42	0	34	b :  15	mu :  0.0007	w :  3	
-TZ5LZ5G	42	0	34	b :  8	mu :  0.0007	w :  3	
-YHPCFB3	45	0	34	b :  12	mu :  0.0005	w :  1.5	
+RunID	# of Nodes	Receptor Nodes	Source Nodes(Total: 34)	Target Nodes(Total: 0)	Params
+5E6I7VA	48	2	34	0	b :  8	mu :  0.0003	w :  3	
+65ZYXI6	43	2	34	0	b :  15	mu :  0.0005	w :  2	
+BMUGX4D	43	2	34	0	b :  4	mu :  0.0005	w :  2	
+D44NOBD	45	2	34	0	b :  8	mu :  0.0003	w :  1.5	
+EE6ONVL	47	2	34	0	b :  8	mu :  0.0003	w :  2.5	
+F7XXQYY	45	2	34	0	b :  12	mu :  0.0003	w :  1.5	
+FZKWCV7	47	2	34	0	b :  15	mu :  0.0001	w :  3	
+H7IJDN2	48	2	34	0	b :  10	mu :  0.0003	w :  3	
+IHX72UH	47	2	34	0	b :  4	mu :  0.0003	w :  2.5	
+JJ7BMKK	45	2	34	0	b :  10	mu :  0.0003	w :  1.5	
+M53IYTL	48	2	34	0	b :  4	mu :  0.0003	w :  3	
+OYPIWSA	45	2	34	0	b :  15	mu :  0.0003	w :  1.5	
+PIAOFRV	48	2	34	0	b :  15	mu :  0.0003	w :  3	
+QBX3VAI	45	2	34	0	b :  4	mu :  0.0003	w :  1.5	
+R4ZMJ4E	47	2	34	0	b :  10	mu :  0.0001	w :  3	
+RBTFEBU	47	2	34	0	b :  4	mu :  0.0001	w :  3	
+S5PW2QN	47	2	34	0	b :  12	mu :  0.0001	w :  3	
+SQ6EJBK	43	2	34	0	b :  12	mu :  0.0005	w :  2	
+SSJGAYC	47	2	34	0	b :  10	mu :  0.0003	w :  2.5	
+TETAQ7G	47	2	34	0	b :  15	mu :  0.0003	w :  2.5	
+TNB5AS6	43	2	34	0	b :  8	mu :  0.0005	w :  2	
+V2WAIVV	47	2	34	0	b :  12	mu :  0.0003	w :  2.5	
+X2KVCJ7	43	2	34	0	b :  10	mu :  0.0005	w :  2	
+XQ2CHSQ	48	2	34	0	b :  12	mu :  0.0003	w :  3	
+YYHXNQO	47	2	34	0	b :  8	mu :  0.0001	w :  3	
+3BE2VMX	42	1	34	0	b :  4	mu :  0.0005	w :  3	
+3S7B2YL	46	1	34	0	b :  8	mu :  0.0005	w :  2.5	
+3THBCMO	46	1	34	0	b :  10	mu :  0.0001	w :  1	
+42RXCKY	45	1	34	0	b :  8	mu :  0.0007	w :  1	
+4FTOSH4	43	1	34	0	b :  8	mu :  0.0007	w :  2.5	
+4GF3OJI	43	1	34	0	b :  4	mu :  0.0007	w :  2.5	
+4GTIV2K	43	1	34	0	b :  4	mu :  0.0007	w :  2	
+4KZ2P6V	44	1	34	0	b :  12	mu :  0.0003	w :  2	
+5DALIQN	43	1	34	0	b :  12	mu :  0.0001	w :  2	
+5J5DEP7	46	1	34	0	b :  15	mu :  0.0001	w :  1	
+5WIMAER	45	1	34	0	b :  12	mu :  0.0005	w :  1	
+6DMYAQ5	46	1	34	0	b :  8	mu :  0.0001	w :  2.5	
+6GPEPXO	44	1	34	0	b :  15	mu :  0.0003	w :  2	
+6VF6HJD	47	1	34	0	b :  10	mu :  0.0001	w :  1.5	
+76R7X7S	43	1	34	0	b :  15	mu :  0.0007	w :  2.5	
+7ALVMP7	44	1	34	0	b :  8	mu :  0.0003	w :  2	
+7DWOKHU	45	1	34	0	b :  8	mu :  0.0005	w :  1	
+7RO24XR	43	1	34	0	b :  15	mu :  0.0007	w :  2	
+A62325L	45	1	34	0	b :  12	mu :  0.0007	w :  1	
+ABLIZL2	43	1	34	0	b :  12	mu :  0.0007	w :  1.5	
+ACWFS6Z	42	1	34	0	b :  15	mu :  0.0005	w :  3	
+AMUKNFM	43	1	34	0	b :  12	mu :  0.0007	w :  2	
+AZMDBZ5	43	1	34	0	b :  8	mu :  0.0007	w :  1.5	
+B3F2WIQ	42	1	34	0	b :  12	mu :  0.0005	w :  3	
+B7DWSPL	43	1	34	0	b :  10	mu :  0.0007	w :  2.5	
+BE4OGT3	47	1	34	0	b :  15	mu :  0.0001	w :  1.5	
+BRTPDIR	45	1	34	0	b :  10	mu :  0.0007	w :  1	
+CYX3TF3	43	1	34	0	b :  10	mu :  0.0001	w :  2	
+DND7HCD	47	1	34	0	b :  12	mu :  0.0003	w :  1	
+F7DXOND	46	1	34	0	b :  8	mu :  0.0001	w :  1	
+FJNUJVZ	47	1	34	0	b :  8	mu :  0.0003	w :  1	
+G4NVXNK	46	1	34	0	b :  15	mu :  0.0005	w :  2.5	
+GADSDYB	43	1	34	0	b :  4	mu :  0.0001	w :  2	
+GIFMV5W	43	1	34	0	b :  8	mu :  0.0001	w :  2	
+GSUKVKR	47	1	34	0	b :  12	mu :  0.0001	w :  1.5	
+HBYWGF7	45	1	34	0	b :  15	mu :  0.0007	w :  1	
+HKQPJGL	46	1	34	0	b :  15	mu :  0.0001	w :  2.5	
+HQFFFMV	46	1	34	0	b :  10	mu :  0.0001	w :  2.5	
+IKUK7LR	42	1	34	0	b :  10	mu :  0.0005	w :  3	
+IUM22NF	47	1	34	0	b :  15	mu :  0.0003	w :  1	
+KH554TX	43	1	34	0	b :  12	mu :  0.0007	w :  2.5	
+L57L4I2	45	1	34	0	b :  15	mu :  0.0005	w :  1	
+L6NTD3J	45	1	34	0	b :  10	mu :  0.0005	w :  1	
+L7DJIQ7	46	1	34	0	b :  12	mu :  0.0001	w :  2.5	
+NKM356K	44	1	34	0	b :  4	mu :  0.0003	w :  2	
+OB4JNST	43	1	34	0	b :  8	mu :  0.0007	w :  2	
+PSRKZ45	43	1	34	0	b :  15	mu :  0.0007	w :  1.5	
+PWG5KBJ	46	1	34	0	b :  12	mu :  0.0001	w :  1	
+Q56HY5E	47	1	34	0	b :  8	mu :  0.0001	w :  1.5	
+R7YYUBZ	46	1	34	0	b :  4	mu :  0.0005	w :  2.5	
+RA34VBH	45	1	34	0	b :  4	mu :  0.0007	w :  1	
+RGDZHUV	47	1	34	0	b :  4	mu :  0.0003	w :  1	
+SN7QOFL	42	1	34	0	b :  8	mu :  0.0005	w :  3	
+TPVQGLJ	46	1	34	0	b :  4	mu :  0.0001	w :  1	
+TXWJR4K	43	1	34	0	b :  15	mu :  0.0001	w :  2	
+UIJR4UQ	43	1	34	0	b :  4	mu :  0.0007	w :  1.5	
+WDOSC62	44	1	34	0	b :  10	mu :  0.0003	w :  2	
+WIMQV5F	46	1	34	0	b :  4	mu :  0.0001	w :  2.5	
+WJRR5S2	43	1	34	0	b :  10	mu :  0.0007	w :  2	
+WRRKHVS	45	1	34	0	b :  4	mu :  0.0005	w :  1	
+WXRT5LZ	43	1	34	0	b :  10	mu :  0.0007	w :  1.5	
+XR2RZ7E	46	1	34	0	b :  10	mu :  0.0005	w :  2.5	
+YJULEXT	47	1	34	0	b :  4	mu :  0.0001	w :  1.5	
+YMG6NZN	46	1	34	0	b :  12	mu :  0.0005	w :  2.5	
+YPHNPVC	47	1	34	0	b :  10	mu :  0.0003	w :  1	
+4MOQQON	42	0	34	0	b :  12	mu :  0.0007	w :  3	
+7A3FRBU	45	0	34	0	b :  15	mu :  0.0005	w :  1.5	
+AV7AC7J	45	0	34	0	b :  8	mu :  0.0005	w :  1.5	
+ENXCXC3	42	0	34	0	b :  10	mu :  0.0007	w :  3	
+GTNVX6C	45	0	34	0	b :  10	mu :  0.0005	w :  1.5	
+N6RLHXB	45	0	34	0	b :  4	mu :  0.0005	w :  1.5	
+PT2XYRG	42	0	34	0	b :  4	mu :  0.0007	w :  3	
+SX2R7J2	42	0	34	0	b :  15	mu :  0.0007	w :  3	
+TZ5LZ5G	42	0	34	0	b :  8	mu :  0.0007	w :  3	
+YHPCFB3	45	0	34	0	b :  12	mu :  0.0005	w :  1.5	

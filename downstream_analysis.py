@@ -158,23 +158,33 @@ def generate_runs_info(process, algo):
     
     for run in runs:
         nodes = set()
-        gene_temp_set = set()
+        source_temp_set = set()
+        target_temp_set = set()
         receptor_temp_set = set() 
+
         with open(run / 'pathway.txt') as f:
             for line in f:
                 line = line.strip()
                 endpoints = line.split("\t")
                 nodes.add(endpoints[0])
                 nodes.add(endpoints[1])
-                if endpoints[0] in source_gene or endpoints[0] in target_gene:
-                    gene_temp_set.add(endpoints[0])
+                if endpoints[0] in source_gene:
+                    source_temp_set.add(endpoints[0])
+                elif endpoints[0] in target_gene:
+                    target_temp_set.add(endpoints[0])
                 elif endpoints[0] in receptor_gene:
                     receptor_temp_set.add(endpoints[0])
-                if endpoints[1] in source_gene or endpoints[1] in target_gene:
-                    gene_temp_set.add(endpoints[1])
+                    
+                if endpoints[1] in source_gene:
+                    source_temp_set.add(endpoints[1])
+                elif endpoints[1] in target_gene:
+                    target_temp_set.add(endpoints[1])
                 elif endpoints[1] in receptor_gene:
                     receptor_temp_set.add(endpoints[1])
-        run_dict[str(run).split('-')[-1]] = (len(nodes), len(receptor_temp_set), len(gene_temp_set))
+                elif endpoints[0] in receptor_gene:
+                    receptor_temp_set.add(endpoints[0])
+                
+        run_dict[str(run).split('-')[-1]] = (len(nodes), len(receptor_temp_set), len(source_temp_set), len(target_temp_set))
         
         if algo == 'omicsintegrator1':
             with open(flybase_parent_dir / 'logs' / f'parameters-omicsintegrator1-params-{str(run).split("-")[-1]}.yaml') as f:
@@ -198,16 +208,16 @@ def generate_runs_info(process, algo):
     sorted_runs = sorted(run_dict.items(), key=lambda x: x[1][1], reverse=True)
 
     with open(analysis_file, 'w') as f:
-        f.write('RunID\t# of Nodes\tReceptor Nodes\tPrize Nodes\tParams\n')
+        f.write(f'RunID\t# of Nodes\tReceptor Nodes\tSource Nodes(Total: 34)\tTarget Nodes(Total: {len(target_gene)})\tParams\n')
         for item in sorted_runs:
-            f.write(item[0] + '\t' + str(item[1][0]) + '\t' + str(item[1][1]) + '\t' + str(item[1][2]) + '\t' + param_dict[item[0]] + '\n')
+            f.write(item[0] + '\t' + str(item[1][0]) + '\t' + str(item[1][1]) + '\t' + str(item[1][2]) + '\t' + str(item[1][3]) + '\t' + param_dict[item[0]] + '\n')
                 
 generate_nodes(source_gene_file, source_gene)
 generate_nodes(receptor_gene_file, receptor_gene)
 generate_nodes(cell_target_gene_file, cell_target_gene)
 generate_nodes(muscle_target_gene_file, muscle_target_gene)
-generate_diffusion_analysis(oi1_output_file, oi1_source_output_file, oi1_runs, result_oi1_dict, result_source_oi1_dict)
 
+generate_diffusion_analysis(oi1_output_file, oi1_source_output_file, oi1_runs, result_oi1_dict, result_source_oi1_dict)
 generate_runs_info('flybase', 'omicsintegrator1')
 
 for i in ['cell-cell-fusion', 'muscle-development']:

@@ -21,7 +21,6 @@ cell_target_gene = set()
 muscle_target_gene = set()
 
 oi1_dict = {}
-oi2_dict = {}
 cell_pathlinker_dict = {}
 cell_rwr_dict = {}
 muscle_pathlinker_dict = {}
@@ -29,8 +28,6 @@ muscle_rwr_dict = {}
 
 oi1_runs = [x for x in flybase_parent_dir.iterdir() if x.is_dir(
 ) and x.name.startswith('flybase-omicsintegrator1-params')]
-oi2_runs = [x for x in flybase_parent_dir.iterdir() if x.is_dir(
-) and x.name.startswith('flybase-omicsintegrator2-params')]
 
 cell_pathlinker_runs = [x for x in parent_dir.iterdir() if x.is_dir(
 ) and x.name.startswith('cell-cell-fusion-pathlinker-params-')]
@@ -45,12 +42,6 @@ muscle_rwr_runs = [x for x in parent_dir.iterdir() if x.is_dir(
 algo_list_flybase = []
 algo_list_cell = []
 algo_list_muscle = []
-
-if Path('./FlyBase/rwr-pathway.txt').exists():
-    rwr_pathway_file = Path('./FlyBase/rwr-pathway.txt')
-    algo_list_flybase.append('rwr mode1')
-    algo_list_flybase.append('rwr mode2')
-    algo_list_flybase.append('rwr mode3')
 
 def generate_nodes(nodes_file: Path, gene_set) -> None:
     """
@@ -139,37 +130,6 @@ def match_algo(term, algo, run_id):
     if term == 'FlyBase Gene Diffusion':
         if algo == 'omicsintegrator1':
             return produce_elements(grab_data(flybase_parent_dir, oi1_dict, oi1_runs, algo, run_id), None)
-        elif algo == 'omicsintegrator2':
-            return produce_elements(grab_data(flybase_parent_dir, oi2_dict, oi2_runs, algo, run_id), None)
-        elif algo == 'rwr':
-            file = rwr_pathway_file
-
-            edges = []
-            linker_nodes = set()
-            with open(file, 'r') as f:
-                for line in f:
-                    temp = line.strip().split('\t')
-                    edges.append((temp[0], temp[1]))
-                    linker_nodes.add(temp[0])
-                    linker_nodes.add(temp[1])
-
-            selected_edges = []
-            if run_id == 'mode1':
-                selected_edges = edges
-            elif run_id == 'mode2':
-                for edge in edges:
-                    if edge[0] in source_gene and edge[1] in linker_nodes:
-                        selected_edges.append(edge)
-            elif run_id == 'mode3':
-                for edge in edges:
-                    if edge[0] in source_gene and edge[1] in (linker_nodes - source_gene):
-                        selected_edges.append(edge)
-            G = nx.Graph()
-            G.add_edges_from(selected_edges)
-            print(f"Using RWR algorithm with {run_id}...")
-            print(f"Number of nodes: {len(G.nodes)}")
-            print(f"Number of edges: {len(G.edges)} \n")
-            return produce_elements(G, None)
         else:
             return {}
     elif term == 'cell-cell fusion':
@@ -195,7 +155,7 @@ generate_nodes(cell_target_gene_file, cell_target_gene)
 generate_nodes(muscle_target_gene_file, muscle_target_gene)
 
 update_algo_list(algo_list_flybase, oi1_dict, oi1_runs, 'omicsintegrator1')
-update_algo_list(algo_list_flybase, oi2_dict, oi2_runs, 'omicsintegrator2')
+
 update_algo_list(algo_list_cell, cell_pathlinker_dict,
                  cell_pathlinker_runs, 'pathlinker')
 update_algo_list(algo_list_cell, cell_rwr_dict, cell_rwr_runs, 'rwr')
