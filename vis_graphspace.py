@@ -1,7 +1,7 @@
 from graphspace_python.api.client import GraphSpace
 from graphspace_python.graphs.classes.gsgraph import GSGraph
-from graphspace_python.graphs.classes.gslayout import GSLayout
 from pathlib import Path
+import networkx as nx
 
 graphspace = GraphSpace('liue@reed.edu', 'Lyc20010206!!!')
 
@@ -56,7 +56,7 @@ def update_graphspace_graph(process, algo, run_id, source_size : int, intermedia
                 continue
             line = line.strip()
             endpoints = line.split("\t")
-            node_dict[endpoints[0]] = endpoints[2]
+            node_dict[endpoints[0]] = [endpoints[2]]
             
     with open(source_analysis_file, 'r') as f:
         for i, line in enumerate(f):
@@ -64,7 +64,7 @@ def update_graphspace_graph(process, algo, run_id, source_size : int, intermedia
                 continue
             line = line.strip()
             endpoints = line.split("\t")
-            node_dict[endpoints[0]] = endpoints[2]
+            node_dict[endpoints[0]] = [endpoints[2]]
             
     edge_dict = {}
     with open(interactome_file, 'r') as f:
@@ -72,6 +72,12 @@ def update_graphspace_graph(process, algo, run_id, source_size : int, intermedia
             line = line.strip()
             endpoints = line.split("\t")
             edge_dict[(endpoints[0], endpoints[1])] = endpoints[2]
+            edge_dict[(endpoints[1], endpoints[0])] = endpoints[2]
+    
+    G = nx.Graph()
+    G.add_edges_from(edge_dict.keys())
+    for key in node_dict.keys():
+        node_dict[key].append(G.degree[key])
     
     target_set = None
     if process == "cell-cell-fusion":
@@ -79,7 +85,6 @@ def update_graphspace_graph(process, algo, run_id, source_size : int, intermedia
     elif process == "muscle-development":
         target_set = muscle_target_gene
         
-    G = GSGraph()
     node_set = set()
     edge_list = []
     with open(test_file / 'pathway.txt') as f:
@@ -88,22 +93,28 @@ def update_graphspace_graph(process, algo, run_id, source_size : int, intermedia
             endpoints = line.split("\t")
             node_set.add(endpoints[0])
             node_set.add(endpoints[1])
-            edge_list.append((endpoints[0], endpoints[1]))
+            edge_list.append((endpoints[0], endpoints[1], {"weight" :float(edge_dict[(endpoints[0], endpoints[1])])}))
             
+    G = nx.Graph()
+    G.add_edges_from(edge_list)
+    T = nx.maximum_spanning_tree(G, weight='weight', algorithm='kruskal')
+    edge_list = T.edges()
+    
+    G = GSGraph()            
     for node in node_set:
         if node in source_gene:    
-            G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'source node' + '; ' + 'Node Frequency: ' + node_dict[node])
-            G.add_node_style(node, shape='rectangle', color='red', border_color = 'red', width=source_size * float(node_dict[node]), height=source_size * float(node_dict[node]))
+            G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'source node' + '; ' + 'Node Frequency: ' + node_dict[node][0] + '; ' + 'Degree: ' + str(node_dict[node][1]))
+            G.add_node_style(node, shape='rectangle', color='red', border_color = 'red', width=source_size * float(node_dict[node][0]), height=source_size * float(node_dict[node][0]))
         elif target_set is not None and node in target_set:
-            G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'target node' + '; ' + 'Node Frequency: ' + node_dict[node])
-            G.add_node_style(node, shape='rectangle', color='green', border_color = 'green', width=source_size * float(node_dict[node]), height=source_size * float(node_dict[node]))
+            G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'target node' + '; ' + 'Node Frequency: ' + node_dict[node][0] + '; ' + 'Degree: ' + str(node_dict[node][1]))
+            G.add_node_style(node, shape='rectangle', color='green', border_color = 'green', width=source_size * float(node_dict[node][0]), height=source_size * float(node_dict[node][0]))
         else:
             if node in receptor_gene:
-                G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'receptor node' + '; ' + 'Node Frequency: ' + node_dict[node])
-                G.add_node_style(node, shape='triangle', color='blue', border_color= 'blue', width=intermediate_size * float(node_dict[node]), height=intermediate_size * float(node_dict[node])) 
+                G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'receptor node' + '; ' + 'Node Frequency: ' + node_dict[node][0] + '; ' + 'Degree: ' + str(node_dict[node][1]))
+                G.add_node_style(node, shape='triangle', color='blue', border_color= 'blue', width=intermediate_size * float(node_dict[node][0]), height=intermediate_size * float(node_dict[node][0])) 
             else:
-                G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'intermediate node' + '; ' + 'Node Frequency: ' + node_dict[node])
-                G.add_node_style(node, shape='ellipse', color='grey', border_color = 'grey', width=intermediate_size * float(node_dict[node]), height=intermediate_size * float(node_dict[node]))
+                G.add_node(node, label=node, popup = 'Gene: ' + node + '; ' + 'Type: ' + 'intermediate node' + '; ' + 'Node Frequency: ' + node_dict[node][0] + '; ' + 'Degree: ' + str(node_dict[node][1]))
+                G.add_node_style(node, shape='ellipse', color='grey', border_color = 'grey', width=intermediate_size * float(node_dict[node][0]), height=intermediate_size * float(node_dict[node][0]))
 
     for edge in edge_list:
         G.add_edge(edge[0], edge[1], directed=False, popup='Edge weight: ' + edge_dict[(edge[0], edge[1])])
