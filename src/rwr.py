@@ -33,20 +33,20 @@ class RWR(PRM):
                 node_df = data.request_node_columns(['prize'])
                 nodes = pd.merge(nodes, node_df, on='NODEID')
                 # creates with the node type without headers
-                nodes.to_csv(filename_map[node_type], index=False, sep= " ", columns=['NODEID', 'prize'])
+                nodes.to_csv(filename_map[node_type], index=False, sep= "\t", columns=['NODEID', 'prize'])
             else:
                 #If there aren't prizes but are sources and targets, make prizes based on them
                 nodes = data.request_node_columns([node_type])
                 # make all nodes have a prize of 1
                 nodes['prize'] = 1.0
                 # creates with the node type without headers
-                nodes.to_csv(filename_map[node_type], index=False, sep= " ", columns=['NODEID', 'prize'])
+                nodes.to_csv(filename_map[node_type], index=False, sep= "\t", columns=['NODEID', 'prize'])
 
         # create the network of edges
         edges = data.get_interactome()
 
         # creates the edges files that contains the head and tail nodes and the weights after them
-        edges.to_csv(filename_map['edges'], sep=" ", index=False, columns=["Interactor1","Interactor2","Weight"])
+        edges.to_csv(filename_map['edges'], sep="\t", index=False, columns=["Interactor1","Interactor2","Weight"])
 
 
     # Skips parameter validation step
@@ -64,7 +64,7 @@ class RWR(PRM):
         """
 
         if not edges or not sources or not targets or not output_file:
-            raise ValueError('Required RandomWalk arguments are missing')
+            raise ValueError('Required RWR arguments are missing')
 
         work_dir = '/spras'
 
@@ -100,7 +100,7 @@ class RWR(PRM):
                    '--threshold', str(threshold),
                    '--output_file', mapped_out_prefix]
 
-        print('Running RandomWalk with arguments: {}'.format(' '.join(command)), flush=True)
+        print('Running RWR with arguments: {}'.format(' '.join(command)), flush=True)
 
 
         container_framework = 'singularity' if singularity else 'docker'

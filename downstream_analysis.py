@@ -162,6 +162,8 @@ def generate_runs_info(process, algo):
         target_temp_set = set()
         receptor_temp_set = set() 
 
+        edge_num = 0
+
         with open(run / 'pathway.txt') as f:
             for line in f:
                 line = line.strip()
@@ -183,8 +185,10 @@ def generate_runs_info(process, algo):
                     receptor_temp_set.add(endpoints[1])
                 elif endpoints[0] in receptor_gene:
                     receptor_temp_set.add(endpoints[0])
+                    
+                edge_num += 1
                 
-        run_dict[str(run).split('-')[-1]] = (len(nodes), len(receptor_temp_set), len(source_temp_set), len(target_temp_set))
+        run_dict[str(run).split('-')[-1]] = (len(nodes), len(receptor_temp_set), len(source_temp_set), len(target_temp_set), edge_num)
         
         if algo == 'omicsintegrator1':
             with open(flybase_parent_dir / 'logs' / f'parameters-omicsintegrator1-params-{str(run).split("-")[-1]}.yaml') as f:
@@ -208,9 +212,9 @@ def generate_runs_info(process, algo):
     sorted_runs = sorted(run_dict.items(), key=lambda x: x[1][1], reverse=True)
 
     with open(analysis_file, 'w') as f:
-        f.write(f'RunID\t# of Nodes\tReceptor Nodes\tSource Nodes(Total: 34)\tTarget Nodes(Total: {len(target_gene)})\tParams\n')
+        f.write(f'RunID\t# of Nodes\t# of Edges\tReceptor Nodes\tSource Nodes(Total: 34)\tTarget Nodes(Total: {len(target_gene)})\tParams\n')
         for item in sorted_runs:
-            f.write(item[0] + '\t' + str(item[1][0]) + '\t' + str(item[1][1]) + '\t' + str(item[1][2]) + '\t' + str(item[1][3]) + '\t' + param_dict[item[0]] + '\n')
+            f.write(item[0] + '\t' + str(item[1][0]) + '\t' + str(item[1][4]) + '\t' + str(item[1][1]) + '\t' + str(item[1][2]) + '\t' + str(item[1][3]) + '\t' + param_dict[item[0]] + '\n')
                 
 generate_nodes(source_gene_file, source_gene)
 generate_nodes(receptor_gene_file, receptor_gene)
