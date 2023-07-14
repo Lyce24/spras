@@ -140,6 +140,7 @@ def generate_fusion_analysis(process, algo) -> None:
                 f.write(item[0] + '\t' + str(item[1]) + '\t' + str(round((item[1] / len(runs)), 4)) + '\t' + 'Target' + '\n')
 
 def generate_runs_info(process, algo):
+    print(f'Generating {process} {algo} runs info...')
     analysis_file = Path(f'./downstream_analysis/{process}-{algo}-runs.txt')
     if process == 'cell-cell-fusion' or process == 'muscle-development':
         runs = [x for x in parent_dir.iterdir() if x.is_dir() and x.name.startswith(f'{process}-{algo}-params')]
@@ -155,6 +156,8 @@ def generate_runs_info(process, algo):
     
     run_dict = {}
     param_dict = {}
+    
+    gene_set = set()
     
     for run in runs:
         nodes = set()
@@ -172,6 +175,7 @@ def generate_runs_info(process, algo):
                 nodes.add(endpoints[1])
                 if endpoints[0] in source_gene:
                     source_temp_set.add(endpoints[0])
+                    gene_set.add(endpoints[0])
                 elif endpoints[0] in target_gene:
                     target_temp_set.add(endpoints[0])
                 elif endpoints[0] in receptor_gene:
@@ -179,6 +183,7 @@ def generate_runs_info(process, algo):
                     
                 if endpoints[1] in source_gene:
                     source_temp_set.add(endpoints[1])
+                    gene_set.add(endpoints[1])
                 elif endpoints[1] in target_gene:
                     target_temp_set.add(endpoints[1])
                 elif endpoints[1] in receptor_gene:
@@ -207,9 +212,12 @@ def generate_runs_info(process, algo):
                 for line in f:
                     param += line.strip() + '\t'
                 param_dict[str(run).split('-')[-1]] = param
-            
-    # sorted the dictionary by the number of receptors
-    sorted_runs = sorted(run_dict.items(), key=lambda x: x[1][1], reverse=True)
+          
+    # print(source_gene.difference(gene_set))  
+    # sorted the dictionary by the number of receptors, if the number of receptors are the same, then sort by the number of source nodes + the target nodes
+    def sort_dict(x):
+        return (x[1][1], x[1][2] + x[1][3])
+    sorted_runs = sorted(run_dict.items(), key=sort_dict, reverse=True)
 
     with open(analysis_file, 'w') as f:
         f.write(f'RunID\t# of Nodes\t# of Edges\tReceptor Nodes\tSource Nodes(Total: 34)\tTarget Nodes(Total: {len(target_gene)})\tParams\n')
