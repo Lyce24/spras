@@ -134,5 +134,5 @@ def update_graphspace_graph(process, algo, run_id, source_size : int, intermedia
 # update_graphspace_graph('FlyBase', 'omicsintegrator1', '5E6I7VA', 60, 120)
 # update_graphspace_graph('cell-cell-fusion', 'pathlinker', '6SWY7JS', 70, 70)
 # update_graphspace_graph('muscle-development', 'pathlinker', '6SWY7JS', 70, 70)
-update_graphspace_graph('cell-cell-fusion', 'rwr', 'Y5BUYRK', 70, 70)
-update_graphspace_graph('muscle-development', 'rwr', 'PPOMXB3', 70, 70)
+update_graphspace_graph('cell-cell-fusion', 'rwr', 'UPDBRN5', 70, 70)
+update_graphspace_graph('muscle-development', 'rwr', 'JARWIGX', 70, 70)
