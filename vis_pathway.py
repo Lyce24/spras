@@ -97,17 +97,17 @@ def produce_elements(G: nx.Graph, target_gene):
     for i in range(len(elements['elements']['nodes'])):
         elements['elements']['nodes'][i]['data']['label'] = elements['elements']['nodes'][i]['data']['id']
         if elements['elements']['nodes'][i]['data']['id'] in source_gene:
-            elements['elements']['nodes'][i]['classes'] = 'red triangle'
+            elements['elements']['nodes'][i]['classes'] = 'red rectangle'
             elements['elements']['nodes'][i]['position'] = {
                 'x': 60 * source, 'y': 0}
             source += 1
         elif target_gene is not None and elements['elements']['nodes'][i]['data']['id'] in target_gene:
-            elements['elements']['nodes'][i]['classes'] = 'blue rectangle'
+            elements['elements']['nodes'][i]['classes'] = 'green triangle'
             elements['elements']['nodes'][i]['position'] = {
                 'x': 60 * target, 'y': 1600}
             target += 1
         elif elements['elements']['nodes'][i]['data']['id'] in receptor_gene:
-            elements['elements']['nodes'][i]['classes'] = 'green rectangle'
+            elements['elements']['nodes'][i]['classes'] = 'blue triangle'
             elements['elements']['nodes'][i]['position'] = {
                 'x': 60 * receptor, 'y': 500}
             receptor += 1
